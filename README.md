@@ -12,9 +12,9 @@ Research in the Internet of Things is global and growing fast, but lacks standar
 
 ### Resources
 
-* [Architecture](http://dev.lelylan.com/architecture) (how Lelylan works)
-* [API](http://dev.lelylan.com/api) (how to use Lelylan)
-* [Blog](http://lelylan.com) (latest from Lelylan)
+* [Architecture](http://dev.lelylan.com/architecture) (request life cycle)
+* [Internet of Things API](http://dev.lelylan.com/api) (how it works)
+* [Blog](http://lelylan.com) (latest from the community)
 
 
 
