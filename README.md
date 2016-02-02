@@ -6,53 +6,68 @@ Lelylan platform is both hardware-agnostic and platform-agnostic. This means you
 
 ![Lelylan Logo](https://raw.githubusercontent.com/lelylan/lelylan/master/public/logo-lelylan.png)
 
-## Why Lelylan
+### Why Lelylan
 
 Research in the Internet of Things is global and growing fast, but lacks standard tools. Many companies are building their own solution. By sharing what we have learned during the last years, we hope to create a shared iot platform for connected products.
 
-## Usage Examples
 
-To see Lelylan in action checkout the [tuturials](http://dev.lelylan.com/#overview-tutorials) in the dev center.
+### Usage Examples
 
-## Beta Limitations
+To see Lelylan in action checkout the [tuturials](http://dev.lelylan.com/#overview-tutorials) in the dev center. 
 
-We do our best to provide a highly secure, reliable, scalable, and resilient service. However, Lelylan is still in beta and problems may occour. Use the [support channels](http://dev.lelylan.com/support) to get in touch with the Lelylan team and the community.
+
+### Resources
+
+* [Architecture](http://dev.lelylan.com/architecture) 
+* [API](http://dev.lelylan.com/api)
+* [Dev center](http://dev.lelylan.com)
+* [Support](http://dev.lelylan.com/support)
+* [Site](http://lelylan.com)
 
 
 
 # Getting Started
 
-Lelylan can be installed either on your computer or on servers. Before installing Lelylan you may find useful to read more about the [architecture](http://dev.lelylan.com/architecture) and the [APIs](http://dev.lelylan.com/api).
+### Requirements
 
-## Requirements
+Lelylan is tested against
 
-Lelylan API is tested against MRI 1.9.3.
-Devices API is tested against MRI 1.9.3.
+* Ruby MRI ~1.9.3
+* Node ~0.8.8
+* MongoDB ~2.6
+* Redis ~2.6
 
-## Lelylan Microservices
 
-Lelylan is composed by a number of microservices (small apps) under development and each of them has its own installation instructions. 
+## Setup
 
-Docker Registry: Registry server for Docker (hosting/delivery of repositories and images)
-Docker Machine: Machine management for a container-centric world
-Docker Swarm: A Docker-native clustering system
-Docker Compose (formerly Fig): Define and run multi-container apps
-Kitematic: The easiest way to use Docker on Mac and Windows
-If you know of another project underway that should be listed here, please help us keep this list up-to-date by submitting a PR.
+* [Install MongoDB](https://docs.mongodb.org/manual/installation/)
+* [Install Redis](http://redis.io/download)
 
-## Under the hood
 
-Under the hood, Lelylan is built using the following components:
+## Microservices
 
-* The Ruby and Node.js programming languages.
-* The MongoDB document-oriented database.
-* The Redis in-memory data structure store.
+Lelylan is composed by seeveral microservices, meaning you need to follow the installation instructions for each of them.
+
+* [API Proxy](https://github.com/lelylan/api-proxy). Api Proxy.
+* [Devices API](https://github.com/lelylan/devices). Monitor and control.
+* [Types API](https://github.com/lelylan/types). Device structure (propperties, functions, statuses).
+* [Subscriptions API](https://github.com/lelylan/subscriptions). Webhooks subscription.
+* [Profiles API](https://github.com/lelylan/profiles). User information.
+* [OAuth 2.0](https://github.com/lelylan/people). Authentication and authorization.
+* [Physical Proxy](https://github.com/lelylan/physicals). Fire actions to the physical world.
+* [MQTT Node](https://github.com/lelylan/nodes). Handle MQTT requests.
+* [MQTT Server](https://github.com/lelylan/mqtt).MQTT server/broker 3.1 compliant.
+* [Webhooks](https://github.com/lelylan/webhooks). Realtime HTTP notification.
+* [Websockets](https://github.com/lelylan/websockets). Full-duplex communication over TCP.
+
+We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. Any help in this section is really appreciated.
 
 # Contributing to Lelylan
 
 https://github.com/docker/docker#how-the-project-is-run
 https://github.com/docker/docker/tree/master/project
 
+ROADMAP
 
 ## License
 
