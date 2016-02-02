@@ -8,7 +8,7 @@ Lelylan platform is both hardware-agnostic and platform-agnostic. This means you
 
 ### Why Lelylan
 
-An Internet of Things platform is a key ingredient to the innovative products and technologies of the future world. Research in this area is global and growing fast, but lacks standard tools. By sharing what we have learned during the last years, we hope to create an open solution for exchanging ideas.
+Research in the Internet of Things is global and growing fast, but lacks standard tools. Many companies are building their own solution. By sharing what we have learned during the last years, we hope to create a shared iot platform for connected products.
 
 ### Beta Limitations
 
