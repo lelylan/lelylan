@@ -12,7 +12,7 @@ contributors.
 * [Design Proposals](#design-proposals)
 * [Tips and guidelines](#tips-and-guidelines)
 * [Community Guidelines](#community-guidelines)
-
+* [Coding Style](#coding-style)
 
 
 # General Issues
@@ -135,7 +135,8 @@ affects `dev/` and `devices/`, it needs an absolute majority from the maintainer
 absolute majority of the maintainers of `devices/`.
 
 
-## Lelylan community guidelines
+
+# Community guidelines
 
 We want to keep the Lelylan community active, growing and collaborative. We need your help to keep it that way. 
 To help with this we've come up with some general guidelines for the community as a whole:
@@ -201,7 +202,8 @@ do need a fair way to deal with people who are making our community suck.
 	fair solution if there has been a misunderstanding.
 
 
-## Coding Style
+
+# Coding Style
 
 Unless explicitly stated, we follow the coding guidelines from the Ruby and Node.js community.
 
