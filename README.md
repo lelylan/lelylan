@@ -14,10 +14,29 @@ Research in the Internet of Things is global and growing fast, but lacks standar
 
 We do our best to provide a highly secure, reliable, scalable, and resilient service. However, Lelylan is still in beta and problems may occour. Use the [support channels](http://dev.lelylan.com/support) to solve them.
 
+
+# Getting started
+
+Lelylan can be installed either on your computer or on servers. To get started, check out the [installation] instructions in the documentation. To better understand how Lelylan Works, learn about the [architecture](http://dev.lelylan.com/architecture) and the [APIs](http://dev.lelylan.com/api) before moving further.
+
+We also offer an interactive tutorial for quickly learning the basics of using Docker.
+
+Usage examples
+Docker can be used to run short-lived commands, long-running daemons (app servers, databases, etc.), interactive shell sessions, etc.
+
+You can find a list of real-world examples in the documentation.
+
+Under the hood
+
+Under the hood, Docker is built on the following components:
+
+The cgroups and namespaces capabilities of the Linux kernel
+The Go programming language
+The Docker Image Specification
+The Libcontainer Specification
+
+
+
+
 ### Resources
 
-* [Dev Center](http://dev.lelylan.com)
-* [Architecture](http://dev.lelylan.com/architecture)
-* [API](http://dev.lelylan.com/api)
-* [Blog](https://medium.com/@lelylan)
-* [Site](http://lelylan.com)
