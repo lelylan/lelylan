@@ -55,22 +55,25 @@ Clone and follow the detailed installation guidelines for the repositories below
 
 At this point you whould be able to access to the lelylan platform through the URL `http://localhost:3000`.
 
+
 ## Deployment
 
 We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [lelylan team](http://dev.lelylan.com/api).
+
+
+## Roadmap
+
+Checkout the [roadmap](/ROADMAP.md) to see our near future goals.
 
 
 ## Contributing to Lelylan
 
 If you want to contribute and hack on Lelylan we have [instructions](/CONTRIBUTING.md) to help you get started.
 
-## Roadmap
-
-
 
 ## Support
 
-For any problem we have different [support channels](http://dev.lelylan.com/support) depending from your needs.
+Use the available [communication channels](http://dev.lelylan.com/support) to communicate your ideas, problems or suggestions.
 
 
 ## License
