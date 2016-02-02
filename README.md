@@ -56,7 +56,7 @@ Lelylan is composed by seeveral microservices, meaning you need to follow the in
 * [OAuth 2.0](https://github.com/lelylan/people). Authentication and authorization.
 * [Physical Proxy](https://github.com/lelylan/physicals). Fire actions to the physical world.
 * [MQTT Node](https://github.com/lelylan/nodes). Handle MQTT requests.
-* [MQTT Server](https://github.com/lelylan/mqtt).MQTT server/broker 3.1 compliant.
+* [MQTT Server](https://github.com/lelylan/mqtt). MQTT server/broker 3.1 compliant.
 * [Webhooks](https://github.com/lelylan/webhooks). Realtime HTTP notification.
 * [Websockets](https://github.com/lelylan/websockets). Full-duplex communication over TCP.
 
