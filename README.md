@@ -36,10 +36,10 @@ Lelylan is tested against
 * [Install Redis](http://redis.io/download)
 
 
-## Microservices
+## Installation
 
-Lelylan is composed by different microservices. 
-Checkt out the installation guidelines you find in each of the following repositories.
+Lelylan is composed by different microservices and each of them needs to be up and running to run the Lelylan platform.
+Clone and follow the detailed installation guidelines for the repositories below.
 
 * [Devices API](https://github.com/lelylan/devices) (device monitor and control)
 * [Types API](https://github.com/lelylan/types) (device structure definition)
@@ -52,6 +52,10 @@ Checkt out the installation guidelines you find in each of the following reposit
 * [Webhooks](https://github.com/lelylan/webhooks) (realtime HTTP notification)
 * [Websockets](https://github.com/lelylan/websockets) (full-duplex communication over TCP)
 * [API Proxy](https://github.com/lelylan/api-proxy) (API access point)
+
+At this point you whould be able to access to the lelylan platform through the URL `http://localhost:3000`.
+
+## Deployment
 
 We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [lelylan team](http://dev.lelylan.com/api).
 
