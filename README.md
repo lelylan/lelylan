@@ -13,17 +13,7 @@ Research in the Internet of Things is global and growing fast, but lacks standar
 
 ### Usage Examples
 
-To see Lelylan in action checkout the [tuturials](http://dev.lelylan.com/#overview-tutorials) in the dev center. 
-
-
-### Resources
-
-* [Architecture](http://dev.lelylan.com/architecture) 
-* [API](http://dev.lelylan.com/api)
-* [Dev center](http://dev.lelylan.com)
-* [Support](http://dev.lelylan.com/support)
-* [Site](http://lelylan.com)
-
+To see Lelylan in action checkout the [tuturials](http://dev.lelylan.com/#overview-tutorials) in the dev center. You may also be interested in the [architecture](http://dev.lelylan.com/architecture), [API](http://dev.lelylan.com/api), [documentation](http://dev.lelylan.com), [support](http://dev.lelylan.com/support) and [site](http://lelylan.com).
 
 
 # Getting Started
