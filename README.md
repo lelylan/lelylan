@@ -38,7 +38,7 @@ Lelylan is tested against
 
 ## Microservices
 
-Lelylan is composed by several microservices. Check out the corresponding repository and follow the installation motes. 
+Lelylan is composed by different microservices. Check out the corresponding repository and follow the installation notes for each of them. 
 
 * [API Proxy](https://github.com/lelylan/api-proxy). Api Proxy.
 * [Devices API](https://github.com/lelylan/devices). Monitor and control.
@@ -52,7 +52,7 @@ Lelylan is composed by several microservices. Check out the corresponding reposi
 * [Webhooks](https://github.com/lelylan/webhooks). Realtime HTTP notification.
 * [Websockets](https://github.com/lelylan/websockets). Full-duplex communication over TCP.
 
-We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. Any help in this section is really appreciated.
+We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [Lelylan Team](http://dev.lelylan.com/api).
 
 ## Microservices
 
