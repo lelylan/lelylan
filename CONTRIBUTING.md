@@ -10,7 +10,7 @@ contributors. Read the [community guidelines](#community-guidelines) before you 
 * [General Issues](#reporting-other-issues)
 * [Security Issues](#reporting-security-issues)
 * [Design Proposals](#design-and-cleanup-proposals)
-* [Contribution Tips](#quick-contribution-tips-and-guidelines)
+* [Contribution Tips](#quick-contribution-tips-and-guiddoelines)
 * [Community Guidelines](#community-guidelines)
 
 
