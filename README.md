@@ -1,4 +1,4 @@
-# Lelylan: Open Source Internet of Things
+# Lelylan. Open Source Internet of Things
 
 Lelylan is an iot cloud platform based on a lightweight microservices architecture.
 
