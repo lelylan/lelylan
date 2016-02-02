@@ -8,12 +8,14 @@ Lelylan platform is both hardware-agnostic and platform-agnostic. This means you
 
 ### Why Lelylan
 
-Research in the Internet of Things is global and growing fast, but lacks standard tools. Many companies are building their own solution. By sharing what we have learned during the years, we want to create a shared code base for the Internet of Things.
+Research in the Internet of Things is global and growing fast, but lacks standard tools. Many companies are building their own solution. By sharing what we have learned during the years, we want to create a shared code base for the Internet of Things. To see Lelylan in action checkout the [tuturials](http://dev.lelylan.com/#overview-tutorials) in the dev center. 
 
+### Resources
 
-### Usage Examples
+* [Architecture](http://dev.lelylan.com/architecture) (how Lelylan works)
+* [API](http://dev.lelylan.com/api) (how to use Lelylan)
+* [Blog](http://lelylan.com) (Latest from Lelylan)
 
-To see Lelylan in action checkout the [tuturials](http://dev.lelylan.com/#overview-tutorials) in the dev center. You may also be interested in the [architecture](http://dev.lelylan.com/architecture), [API](http://dev.lelylan.com/api), [documentation](http://dev.lelylan.com), and [blog](http://lelylan.com). If you need any help get in touch using the  [support](http://dev.lelylan.com/support) page.
 
 
 # Getting Started
@@ -52,12 +54,21 @@ Lelylan is composed by seeveral microservices, meaning you need to follow the in
 
 We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. Any help in this section is really appreciated.
 
+## Microservices
+
+
+
 # Contributing to Lelylan
 
 https://github.com/docker/docker#how-the-project-is-run
 https://github.com/docker/docker/tree/master/project
 
 ROADMAP
+
+### Help
+
+For any problem ask [support](http://dev.lelylan.com/support) to the community and Lelylan Team.
+
 
 ## License
 
