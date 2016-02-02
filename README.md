@@ -1,10 +1,10 @@
-# Lelylan: Open Source Internet of Things
+# Lelylan. Open Source Internet of Things
 
 Lelylan is an iot cloud platform based on a lightweight microservices architecture.
 
 Lelylan platform is both hardware-agnostic and platform-agnostic. This means you can connect any hardware, from the ESP8622 to the most professional embedded hardware solution and everything in between - and it can run on any public cloud or in your own private datacenter, or even a hybrid environment, whether virtualized or on bare metal.
 
-![Lelylan Logo](https://raw.githubusercontent.com/lelylan/lelylan/master/public/logo-lelylan.png)
+[![Lelylan Logo](https://raw.githubusercontent.com/lelylan/lelylan/master/public/logo-lelylan.png)](http://lelylan.com)
 
 ### Why Lelylan
 
@@ -12,9 +12,9 @@ Research in the Internet of Things is global and growing fast, but lacks standar
 
 ### Resources
 
-* [Architecture](http://dev.lelylan.com/architecture) (how Lelylan works)
-* [API](http://dev.lelylan.com/api) (how to use Lelylan)
-* [Blog](http://lelylan.com) (latest from Lelylan)
+* [Architecture](http://dev.lelylan.com/architecture) (request life cycle)
+* [Internet of Things API](http://dev.lelylan.com/api) (how it works)
+* [Blog](http://lelylan.com) (latest from the community)
 
 
 
@@ -38,24 +38,27 @@ Lelylan is tested against
 
 ## Microservices
 
-Lelylan is composed by different microservices. Check out the corresponding repository and follow the installation notes for each of them. 
+Lelylan is composed by different microservices. Follow the installation process for each of them. 
 
-* [API Proxy](https://github.com/lelylan/api-proxy). Api Proxy.
-* [Devices API](https://github.com/lelylan/devices). Monitor and control.
-* [Types API](https://github.com/lelylan/types). Device structure (propperties, functions, statuses).
-* [Subscriptions API](https://github.com/lelylan/subscriptions). Webhooks subscription.
-* [Profiles API](https://github.com/lelylan/profiles). User information.
-* [OAuth 2.0](https://github.com/lelylan/people). Authentication and authorization.
-* [Physical Proxy](https://github.com/lelylan/physicals). Fire actions to the physical world.
-* [MQTT Node](https://github.com/lelylan/nodes). Handle MQTT requests.
-* [MQTT Server](https://github.com/lelylan/mqtt). MQTT server/broker 3.1 compliant.
-* [Webhooks](https://github.com/lelylan/webhooks). Realtime HTTP notification.
-* [Websockets](https://github.com/lelylan/websockets). Full-duplex communication over TCP.
+* [Devices API](https://github.com/lelylan/devices) (device monitor and control)
+* [Types API](https://github.com/lelylan/types) (device structure definition)
+* [Subscriptions API](https://github.com/lelylan/subscriptions) (realtime webhooks subscription)
+* [Profiles API](https://github.com/lelylan/profiles) (user information)
+* [OAuth 2.0](https://github.com/lelylan/people) (authentication and authorization)
+* [Physical Proxy](https://github.com/lelylan/physicals) (forward actions to the physical world)
+* [MQTT Node](https://github.com/lelylan/nodes) (handle MQTT requests)
+* [MQTT Server](https://github.com/lelylan/mqtt) (MQTT server/broker 3.1 compliant)
+* [Webhooks](https://github.com/lelylan/webhooks) (realtime HTTP notification)
+* [Websockets](https://github.com/lelylan/websockets) (full-duplex communication over TCP)
+* [API Proxy](https://github.com/lelylan/api-proxy) (API access point)
 
-We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [Lelylan Team](http://dev.lelylan.com/api).
+We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [lelylan team](http://dev.lelylan.com/api).
 
-## Microservices
 
+## Contributing
+
+Fork the microservice repo on github and send a pull requests with topic branches. Do not forget to
+provide specs to your contribution.
 
 
 # Contributing to Lelylan
