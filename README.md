@@ -14,7 +14,7 @@ Research in the Internet of Things is global and growing fast, but lacks standar
 
 * [Architecture](http://dev.lelylan.com/architecture) (how Lelylan works)
 * [API](http://dev.lelylan.com/api) (how to use Lelylan)
-* [Blog](http://lelylan.com) (Latest from Lelylan)
+* [Blog](http://lelylan.com) (latest from Lelylan)
 
 
 
@@ -38,7 +38,7 @@ Lelylan is tested against
 
 ## Microservices
 
-Lelylan is composed by seeveral microservices, meaning you need to follow the installation instructions for each of them.
+Lelylan is composed by several microservices. Check out the corresponding repository and follow the installation motes. 
 
 * [API Proxy](https://github.com/lelylan/api-proxy). Api Proxy.
 * [Devices API](https://github.com/lelylan/devices). Monitor and control.
