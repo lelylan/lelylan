@@ -2,19 +2,20 @@
 
 This document tries to define a contributor's guide explaining how to contribute to one or more Lelylan Microservices. 
 It contains information about reporting issues as well as some tips and guidelines useful to experienced open source 
-contributors. Read the [community guidelines](#community-guidelines) before you start participating.
+contributors.
 
 
-## Topics
+### Topics
 
-* [General Issues](#reporting-other-issues)
-* [Security Issues](#reporting-security-issues)
-* [Design Proposals](#design-and-cleanup-proposals)
-* [Contribution Tips](#quick-contribution-tips-and-guiddoelines)
+* [General Issues](#general-issues)
+* [Security Issues](#security-issues)
+* [Design Proposals](#design-proposals)
+* [Tips and guidelines](#tips-and-guidelines)
 * [Community Guidelines](#community-guidelines)
 
 
-## General Issues
+
+# General Issues
 
 A good way to contribute to an open source project is to send a detailed report when you encounter an issue. 
 We appreciate a well-written, thorough bug report, and will thank you for it in advance for your help
@@ -39,7 +40,8 @@ When reporting issues try to include the following elements
 * Additional info
 
 
-## Reporting security issues
+
+# Security issues
 
 Security is an important topic in the Internet of Things. If you discover a security issue, please bring it to 
 our attention right away. Please do not file a public issue. Instead send your report privately to 
@@ -49,7 +51,8 @@ Security reports are greatly appreciated and we will publicly thank you for it. 
 security bounty program, but we hope to start in the near future.
 
 
-## Design and cleanup proposals
+
+# Design proposals
 
 You can propose new designs for existing Lelylan features. You can also design entirely new features. We really 
 appreciate contributors who want to refactor or otherwise cleanup the project. We try hard to keep Lelylan lean 
@@ -72,9 +75,11 @@ To make this type of proposal:
 If your changes required logic changes, note that in your request.
 
 
-## Quick contribution tips and guidelines
+
+# Tips and guidelines
 
 This section gives the experienced contributor some tips and guidelines.
+
 
 ### Pull requests are always welcome
 
