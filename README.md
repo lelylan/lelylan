@@ -38,7 +38,8 @@ Lelylan is tested against
 
 ## Microservices
 
-Lelylan is composed by different microservices. Follow the installation process for each of them. 
+Lelylan is composed by different microservices. 
+Checkt out the installation guidelines you find in each of the following repositories.
 
 * [Devices API](https://github.com/lelylan/devices) (device monitor and control)
 * [Types API](https://github.com/lelylan/types) (device structure definition)
@@ -55,22 +56,17 @@ Lelylan is composed by different microservices. Follow the installation process 
 We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [lelylan team](http://dev.lelylan.com/api).
 
 
-## Contributing
+## Contributing to Lelylan
 
-Fork the microservice repo on github and send a pull requests with topic branches. Do not forget to
-provide specs to your contribution.
+If you want to contribute and hack on Lelylan we have [instructions](/CONTRIBUTING.md) to help you get started.
+
+## Roadmap
 
 
-# Contributing to Lelylan
 
-https://github.com/docker/docker#how-the-project-is-run
-https://github.com/docker/docker/tree/master/project
+## Support
 
-ROADMAP
-
-### Help
-
-For any problem ask [support](http://dev.lelylan.com/support) to the community and Lelylan Team.
+For any problem we have different [support channels](http://dev.lelylan.com/support) depending from your needs.
 
 
 ## License
