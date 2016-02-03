@@ -57,7 +57,7 @@ Follow the installation guidelines for each of them.
 | [Webhooks](https://github.com/lelylan/webhooks) | MQTT server/broker |
 | [Websockets](https://github.com/lelylan/websockets) | Full-duplex communication over TCP |
 
-When installed all services access the [API]((http://dev.lelylan.com/api)) from `http://0.0.0.0:8200` (API proxy URL).
+You can now access the [APIs]((http://dev.lelylan.com/api)) from `http://0.0.0.0:8200` (API proxy URL).
 
 ### Production
 
@@ -77,7 +77,7 @@ When deploying in production every microservice needs to set the following envir
 | `MONGOLAB_TYPES_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Types API MongoDB URL| 
 | `MONGOLAB_JOBS_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Event Bus MongoDB URL | 
 | `MONGOLAB_SUBSCRIPTIONS_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Subs. MongoDB URL | 
-| `REDIS_UR` | Device type sync background job Redis URL |
+| `REDIS_UR` | Background Job Redis URL |
 | `REDIS_RATE_LIMIT_URL=redis://<user>:<pass>@<host>:<port>/` | Late Limit Redis URL |
 | `MEMCACHIER_SERVERS=<host>:<port>` | Cache server |
 | `MEMCACHIER_USERNAME=<username>` | Cache server username |
