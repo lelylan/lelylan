@@ -1,22 +1,22 @@
 # Lelylan. Open Source Internet of Things
 
 
-Lelylan is an iot cloud platform based on a lightweight microservices architecture.
+Lelylan is an IoT cloud platform based on a lightweight microservices architecture.
 
-Lelylan platform is both hardware-agnostic and platform-agnostic. This means you can connect any hardware, from the ESP8622 to the most professional embedded hardware solution and everything in between - and it can run on any public cloud or in your own private datacenter, or even a hybrid environment, whether virtualized or on bare metal.
+The Lelylan platform is both hardware-agnostic and platform-agnostic. This means that you can connect any hardware, from the ESP8622 to the most professional embedded hardware solution and everything in between - and it can run on any public cloud, your own private datacenter, or even in a hybrid environment, whether virtualized or bare metal.
 
 [![Lelylan Logo](https://raw.githubusercontent.com/lelylan/lelylan/master/public/logo-lelylan.png)](http://lelylan.com)
 
 
 ### Why Lelylan
 
-Research in the Internet of Things is global and growing fast, but lacks standard tools. Many companies are building their own solution. By sharing what we have learned during the years, we want to create a shared code base with a clear focus to developers. To see Lelylan in action checkout the [tutorials](http://dev.lelylan.com/#overview-tutorials) in the dev center. 
+Research in the Internet of Things is global and growing fast, but lacks the standard tools. Many companies are building their own solutions. By sharing what we have learned during the years, we want to create a shared code base with a clear focus on developers. To see Lelylan in action checkout the [tuturials](http://dev.lelylan.com/#overview-tutorials) in the dev center. 
 
 ### Resources
 
 * [Architecture](http://dev.lelylan.com/architecture) (request life cycle)
 * [Internet of Things API](http://dev.lelylan.com/api) (how it works)
-* [Lelylan Blog](https://medium.com/@lelylan) (latest from the team)
+* [Blog](http://lelylan.com) (latest from the community)
 
 
 
@@ -24,18 +24,14 @@ Research in the Internet of Things is global and growing fast, but lacks standar
 
 ### Requirements
 
-Lelylan is tested against the techs below.
+Lelylan is tested against
 
 * Ruby MRI ~1.9.3
 * Node ~0.8.8
 * MongoDB ~2.6
 * Redis ~2.6
 
-Remember to run MongoDB and Redis.
-
-    $ `mongod`
-    $ `redis-server`
-
+Remember to run the `mongod` and `redis-server`.
 
 ## Setup
 
@@ -43,10 +39,12 @@ Remember to run MongoDB and Redis.
 * [Install Redis](http://redis.io/download)
 
 
-## Development
+## Installation
+
+### Development
 
 Lelylan is composed by different microservices.
-Follow the installation guidelines for each of them to setup the platform in development.
+Follow the installation guidelines for each of them.
 
 | Microservice  | Description |
 | ------------- | ------------- |
@@ -62,12 +60,12 @@ Follow the installation guidelines for each of them to setup the platform in dev
 | [Webhooks](https://github.com/lelylan/webhooks) | Realtime HTTP notification |
 | [Websockets](https://github.com/lelylan/websockets) | Full-duplex communication over TCP |
 
-If everything works ok, access [Lelylan APIs]((http://dev.lelylan.com/api)) from `http://0.0.0.0:8200`. You can now connect your hardware.
+You can now access the [APIs]((http://dev.lelylan.com/api)) from `http://0.0.0.0:8200` (API proxy URL).
 
 
 ### Production
 
-In production every microservice needs to set the following environment variables. Remember to change them to your own microservices, mongodb, redis and cache values.
+During deployment, every microservice needs to be set to the following environment variables (remember to change them with your own microservices, mongodb, redis and cache URLs).
 
 | Environment Variable | Description |
 | ------------- | ------------- |
@@ -90,18 +88,18 @@ In production every microservice needs to set the following environment variable
 | `REDIS_URL` | Background Job Redis URL |
 | `REDIS_RATE_LIMIT_URL=redis://<user>:<pass>@<host>:<port>/` | Late Limit Redis URL |
 
-We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area, [get in touch](http://dev.lelylan.com/support) with us. 
+We are studying solutions such as Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [lelylan team](http://dev.lelylan.com/api).
 
 
 ## Roadmap
 
-The Roadmap provides description of items that the project decided to prioritize. This should
+The Roadmap provides the description of the items that the project has decided to concentrate on. It should
 serve as a reference point for Lelylan contributors to understand where the project is going, and
-help determine if a contribution could be conflicting with some longer terms plans.
+helps to determine whether a contribution could be conflicting considering the future goals.
 
 The fact that a feature isn't listed here doesn't mean that a patch for it will automatically be
-refused (we also miss important things). We are always happy to receive patches for new cool features we haven't 
-thought about, or didn't judge priority. However understand that such patches might take longer for us 
+refused (we also miss important things). We are always happy to receive patches for new cool features that we haven't 
+thought about, or didn't consider as a priority. Nevertheless understand that such patches might take longer for us 
 to review.
 
 Checkout the [roadmap](/ROADMAP.md) to see our near future goals.
@@ -109,7 +107,7 @@ Checkout the [roadmap](/ROADMAP.md) to see our near future goals.
 
 ## Contributing to Lelylan
 
-This Contributing document tries to define a contributor's guide explaining how to contribute to one or more Lelylan Microservice. It contains information about reporting issues as well as some tips and guidelines useful to experienced open source contributors.
+This Contributing document tries to define a contributor's guide explaining how to contribute to one or more Lelylan Microservice. It contains information about reporting issues as well as some useful tips and guidelines for experienced open source contributors.
 
 Checkout the [contributing](/CONTRIBUTING.md) to help us with Lelylan.
 
