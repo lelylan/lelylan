@@ -61,7 +61,7 @@ When installed all services access the [API]((http://dev.lelylan.com/api)) from 
 
 ### Production
 
-When deploying the service in production every microservice need to set the following environment variables (remember to set your own Microservices, MongoDB, Redis and Cache URLs).
+When deploying in production every microservice needs to set the following environment variables (remember to change them with your own microservices, mongodb, redis and cache URLs).
 
 | Environment Variable | Description |
 | ------------- | ------------- |
