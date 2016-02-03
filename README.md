@@ -10,13 +10,13 @@ Lelylan platform is both hardware-agnostic and platform-agnostic. This means you
 
 ### Why Lelylan
 
-Research in the Internet of Things is global and growing fast, but lacks standard tools. Many companies are building their own solution. By sharing what we have learned during the years, we want to create a shared code base with a clear focus to developers. To see Lelylan in action checkout the [tuturials](http://dev.lelylan.com/#overview-tutorials) in the dev center. 
+Research in the Internet of Things is global and growing fast, but lacks standard tools. Many companies are building their own solution. By sharing what we have learned during the years, we want to create a shared code base with a clear focus to developers. To see Lelylan in action checkout the [tutorials](http://dev.lelylan.com/#overview-tutorials) in the dev center. 
 
 ### Resources
 
 * [Architecture](http://dev.lelylan.com/architecture) (request life cycle)
 * [Internet of Things API](http://dev.lelylan.com/api) (how it works)
-* [Blog](http://lelylan.com) (latest from the community)
+* [Lelylan Blog](https://medium.com/@lelylan) (latest from the team)
 
 
 
@@ -24,14 +24,18 @@ Research in the Internet of Things is global and growing fast, but lacks standar
 
 ### Requirements
 
-Lelylan is tested against
+Lelylan is tested against the techs below.
 
 * Ruby MRI ~1.9.3
 * Node ~0.8.8
 * MongoDB ~2.6
 * Redis ~2.6
 
-Remember to run the `mongod` and `redis-server`.
+Remember to run MongoDB and Redis.
+
+    $ `mongod`
+    $ `redis-server`
+
 
 ## Setup
 
@@ -39,12 +43,10 @@ Remember to run the `mongod` and `redis-server`.
 * [Install Redis](http://redis.io/download)
 
 
-## Installation
-
-### Development
+## Development
 
 Lelylan is composed by different microservices.
-Follow the installation guidelines for each of them.
+Follow the installation guidelines for each of them to setup the platform in development.
 
 | Microservice  | Description |
 | ------------- | ------------- |
@@ -60,12 +62,12 @@ Follow the installation guidelines for each of them.
 | [Webhooks](https://github.com/lelylan/webhooks) | Realtime HTTP notification |
 | [Websockets](https://github.com/lelylan/websockets) | Full-duplex communication over TCP |
 
-You can now access the [APIs]((http://dev.lelylan.com/api)) from `http://0.0.0.0:8200` (API proxy URL).
+If everything works ok, access [Lelylan APIs]((http://dev.lelylan.com/api)) from `http://0.0.0.0:8200`. You can now connect your hardware.
 
 
 ### Production
 
-When deploying in production every microservice needs to set the following environment variables (remember to change them with your own microservices, mongodb, redis and cache URLs).
+In production every microservice needs to set the following environment variables. Remember to change them to your own microservices, mongodb, redis and cache values.
 
 | Environment Variable | Description |
 | ------------- | ------------- |
@@ -88,7 +90,7 @@ When deploying in production every microservice needs to set the following envir
 | `REDIS_URL` | Background Job Redis URL |
 | `REDIS_RATE_LIMIT_URL=redis://<user>:<pass>@<host>:<port>/` | Late Limit Redis URL |
 
-We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [lelylan team](http://dev.lelylan.com/api).
+We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [lelylan team](http://dev.lelylan.com/api) to help us out. 
 
 
 ## Roadmap
