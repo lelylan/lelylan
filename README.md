@@ -65,8 +65,9 @@ When deploying in production every microservice needs to set the following envir
 
 | Environment Variable | Description |
 | ------------- | ------------- |
-| `RACK_ENV=production` | Production environment |
-| `RAILS_ENV=production` | Production environment |
+| `RACK_ENV=production` | Production rack environment |
+| `RAILS_ENV=production` | Production rails environment |
+| `NODE_ENV=production` | Production node environment |
 | `LELYLAN_PEOPLE_URL=people.lelylan.com` | OAuth 2.0 microservice URL |
 | `LELYLAN_DEVICES_URL=devices.lelylan.com` | Devices API microservice URL | 
 | `LELYLAN_TYPES_URL=types.lelylan.com` | Types API microservice URL | 
@@ -77,11 +78,11 @@ When deploying in production every microservice needs to set the following envir
 | `MONGOLAB_TYPES_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Types API MongoDB URL| 
 | `MONGOLAB_JOBS_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Event Bus MongoDB URL | 
 | `MONGOLAB_SUBSCRIPTIONS_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Subs. MongoDB URL | 
-| `REDIS_UR` | Background Job Redis URL |
-| `REDIS_RATE_LIMIT_URL=redis://<user>:<pass>@<host>:<port>/` | Late Limit Redis URL |
 | `MEMCACHIER_SERVERS=<host>:<port>` | Cache server |
 | `MEMCACHIER_USERNAME=<username>` | Cache server username |
 | `MEMCACHIER_PASSWORD=<password>` | Cache server password|
+| `REDIS_URL` | Background Job Redis URL |
+| `REDIS_RATE_LIMIT_URL=redis://<user>:<pass>@<host>:<port>/` | Late Limit Redis URL |
 
 We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [lelylan team](http://dev.lelylan.com/api).
 
