@@ -1,5 +1,6 @@
 # Lelylan. Open Source Internet of Things
 
+
 Lelylan is an iot cloud platform based on a lightweight microservices architecture.
 
 Lelylan platform is both hardware-agnostic and platform-agnostic. This means you can connect any hardware, from the ESP8622 to the most professional embedded hardware solution and everything in between - and it can run on any public cloud or in your own private datacenter, or even a hybrid environment, whether virtualized or on bare metal.
@@ -53,11 +54,12 @@ Follow the installation guidelines for each of them.
 | [OAuth 2.0](https://github.com/lelylan/people) | User authentication and authorization  |
 | [Physical Proxy](https://github.com/lelylan/physicals) | Forward requests to the physical world |
 | [MQTT Node](https://github.com/lelylan/nodes) | Forward and receive MQTT requests |
-| [MQTT Server](https://github.com/lelylan/mqtt) | Realtime HTTP notification |
-| [Webhooks](https://github.com/lelylan/webhooks) | MQTT server/broker |
+| [MQTT Server](https://github.com/lelylan/mqtt) | MQTT server/broker |
+| [Webhooks](https://github.com/lelylan/webhooks) | Realtime HTTP notification |
 | [Websockets](https://github.com/lelylan/websockets) | Full-duplex communication over TCP |
 
 You can now access the [APIs]((http://dev.lelylan.com/api)) from `http://0.0.0.0:8200` (API proxy URL).
+
 
 ### Production
 
