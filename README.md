@@ -33,8 +33,8 @@ Lelylan is tested against the techs below.
 
 Remember to run MongoDB and Redis.
 
-    $ `mongod`
-    $ `redis-server`
+    $ mongod
+    $ redis-server
 
 
 ## Setup
