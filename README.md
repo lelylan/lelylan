@@ -8,7 +8,7 @@ Lelylan platform is both hardware-agnostic and platform-agnostic. This means you
 
 ### Why Lelylan
 
-Research in the Internet of Things is global and growing fast, but lacks standard tools. Many companies are building their own solution. By sharing what we have learned during the years, we want to create a shared code base for the Internet of Things. To see Lelylan in action checkout the [tuturials](http://dev.lelylan.com/#overview-tutorials) in the dev center. 
+Research in the Internet of Things is global and growing fast, but lacks standard tools. Many companies are building their own solution. By sharing what we have learned during the years, we want to create a shared code base with a clear focus to developers. To see Lelylan in action checkout the [tuturials](http://dev.lelylan.com/#overview-tutorials) in the dev center. 
 
 ### Resources
 
