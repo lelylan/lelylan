@@ -50,9 +50,9 @@ Clone and follow the detailed installation guidelines for the repositories below
 | [OAuth 2.0](https://github.com/lelylan/people) | User authentication and authorization  |
 | [Physical Proxy](https://github.com/lelylan/physicals) | Forward requests to the physical world |
 | [MQTT Node](https://github.com/lelylan/nodes) | Forward and receive MQTT requests |
-| [MQTT Server](https://github.com/lelylan/mqtt) | realtime HTTP notification |
+| [MQTT Server](https://github.com/lelylan/mqtt) | Realtime HTTP notification |
 | [Webhooks](https://github.com/lelylan/webhooks) | MQTT server/broker |
-| [Websockets](https://github.com/lelylan/websockets) | full-duplex communication over TCP |
+| [Websockets](https://github.com/lelylan/websockets) | Full-duplex communication over TCP |
 | [API Proxy](https://github.com/lelylan/api-proxy) | Proxy API |
 
 Your [API]((http://dev.lelylan.com/api)) is now accessible at the address `http://localhost:3000`.
