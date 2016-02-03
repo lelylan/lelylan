@@ -65,12 +65,23 @@ We are studying solutions like Docker, Mesos, and Ansible to simplify the instal
 
 ## Roadmap
 
+The Roadmap provides description of items that the project decided to prioritize. This should
+serve as a reference point for Lelylan contributors to understand where the project is going, and
+help determine if a contribution could be conflicting with some longer terms plans.
+
+The fact that a feature isn't listed here doesn't mean that a patch for it will automatically be
+refused (we also miss important things). We are always happy to receive patches for new cool features we haven't 
+thought about, or didn't judge priority. However understand that such patches might take longer for us 
+to review.
+
 Checkout the [roadmap](/ROADMAP.md) to see our near future goals.
 
 
 ## Contributing to Lelylan
 
-If you want to contribute and hack on Lelylan we have [instructions](/CONTRIBUTING.md) to help you get started.
+This Contributing document tries to define a contributor's guide explaining how to contribute to one or more Lelylan Microservice. It contains information about reporting issues as well as some tips and guidelines useful to experienced open source contributors.
+
+Checkout the [contributing](/CONTRIBUTING.md) to help us with Lelylan.
 
 
 ## Support
