@@ -41,19 +41,21 @@ Lelylan is tested against
 Lelylan is composed by different microservices and each of them needs to be up and running to run the Lelylan platform.
 Clone and follow the detailed installation guidelines for the repositories below.
 
-* [Devices API](https://github.com/lelylan/devices) (device monitor and control)
-* [Types API](https://github.com/lelylan/types) (device structure definition)
-* [Subscriptions API](https://github.com/lelylan/subscriptions) (realtime webhooks subscription)
-* [Profiles API](https://github.com/lelylan/profiles) (user information)
-* [OAuth 2.0](https://github.com/lelylan/people) (authentication and authorization)
-* [Physical Proxy](https://github.com/lelylan/physicals) (forward actions to the physical world)
-* [MQTT Node](https://github.com/lelylan/nodes) (handle MQTT requests)
-* [MQTT Server](https://github.com/lelylan/mqtt) (MQTT server/broker 3.1 compliant)
-* [Webhooks](https://github.com/lelylan/webhooks) (realtime HTTP notification)
-* [Websockets](https://github.com/lelylan/websockets) (full-duplex communication over TCP)
-* [API Proxy](https://github.com/lelylan/api-proxy) (API access point)
+| Microservice  | Descripotion |
+| ------------- | ------------- |
+| [Devices API](https://github.com/lelylan/devices)  | Device monitoring and control |
+| [Types API](https://github.com/lelylan/types) | Device type structure |
+| [Subscriptions API](https://github.com/lelylan/subscriptions) | Realtime subscription |
+| [Profiles API](https://github.com/lelylan/profiles) | Profile information |
+| [OAuth 2.0](https://github.com/lelylan/people) | User authentication and authorization  |
+| [Physical Proxy](https://github.com/lelylan/physicals) | Forward requests to the physical world |
+| [MQTT Node](https://github.com/lelylan/nodes) | Forward and receive MQTT requests |
+| [MQTT Server](https://github.com/lelylan/mqtt) | realtime HTTP notification |
+| [Webhooks](https://github.com/lelylan/webhooks) | MQTT server/broker |
+| [Websockets](https://github.com/lelylan/websockets) | full-duplex communication over TCP |
+| [API Proxy](https://github.com/lelylan/api-proxy) | Proxy API |
 
-At this point you whould be able to access to the lelylan platform through the URL `http://localhost:3000`.
+Your [API]((http://dev.lelylan.com/api)) is now accessible at the address `http://localhost:3000`.
 
 
 ## Deployment
