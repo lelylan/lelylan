@@ -90,7 +90,7 @@ In production every microservice needs to set the following environment variable
 | `REDIS_URL` | Background Job Redis URL |
 | `REDIS_RATE_LIMIT_URL=redis://<user>:<pass>@<host>:<port>/` | Late Limit Redis URL |
 
-We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [lelylan team](http://dev.lelylan.com/api) to help us out. 
+We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area, [get in touch](http://dev.lelylan.com/support) with us. 
 
 
 ## Roadmap
