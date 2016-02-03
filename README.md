@@ -38,11 +38,14 @@ Lelylan is tested against
 
 ## Installation
 
-Lelylan is composed by different microservices and each of them needs to be up and running to run the Lelylan platform.
-Clone and follow the detailed installation guidelines for the repositories below.
+### Development
 
-| Microservice  | Descripotion |
+Lelylan is composed by different microservices.
+Follow the installation guidelines for each of them.
+
+| Microservice  | Description |
 | ------------- | ------------- |
+| [API Proxy](https://github.com/lelylan/api-proxy) | Proxy API |
 | [Devices API](https://github.com/lelylan/devices)  | Device monitoring and control |
 | [Types API](https://github.com/lelylan/types) | Device type structure |
 | [Subscriptions API](https://github.com/lelylan/subscriptions) | Realtime subscription |
@@ -53,12 +56,31 @@ Clone and follow the detailed installation guidelines for the repositories below
 | [MQTT Server](https://github.com/lelylan/mqtt) | Realtime HTTP notification |
 | [Webhooks](https://github.com/lelylan/webhooks) | MQTT server/broker |
 | [Websockets](https://github.com/lelylan/websockets) | Full-duplex communication over TCP |
-| [API Proxy](https://github.com/lelylan/api-proxy) | Proxy API |
 
-Your [API]((http://dev.lelylan.com/api)) is now accessible at the address `http://localhost:3000`.
+When installed all services access the [API]((http://dev.lelylan.com/api)) from `http://0.0.0.0:8200` (API proxy URL).
 
+### Production
 
-## Deployment
+When deploying the service in production you need to set the environment variables below (change the environment variables with your Microservices, MongoDB, Redis and Cache URLs instances).
+
+| Environment Variable | Description |
+| ------------- | ------------- |
+| `RACK_ENV=production` | Production environment |
+| `RAILS_ENV=production` | Production environment |
+| `LELYLAN_PEOPLE_URL=people.lelylan.com` | OAuth 2.0 microservice URL |
+| `LELYLAN_DEVICES_URL=devices.lelylan.com` | Devices API microservice URL | 
+| `LELYLAN_TYPES_URL=types.lelylan.com` | Types API microservice URL | 
+| `LELYLAN_SUBSCRIPTIONS_URL=subscriptions.lelylan.com` | Subs. API microservice URL| 
+| `LELYLAN_PROFILES_URL=profiles.lelylan.com` | Profiles API microservice URL | 
+| `MONGOLAB_PEOPLE_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | OAuth 2.0 MongoDB URL| 
+| `MONGOLAB_DEVICES_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Devices API MongoDB URL| 
+| `MONGOLAB_TYPES_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Types API MongoDB URL| 
+| `MONGOLAB_JOBS_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Event Bus MongoDB URL | 
+| `MONGOLAB_SUBSCRIPTIONS_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Subs. MongoDB URL | 
+| `REDIS_RATE_LIMIT_URL=redis://<user>:<pass>@<host>:<port>/` | Late Limit Redis URL |
+| `MEMCACHIER_SERVERS=<host>:<port>` | Cache server |
+| `MEMCACHIER_USERNAME=<username>` | Cache server username |
+| `MEMCACHIER_PASSWORD=<password>` | Cache server password|
 
 We are studying solutions like Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [lelylan team](http://dev.lelylan.com/api).
 
