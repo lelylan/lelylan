@@ -77,6 +77,7 @@ When deploying in production every microservice needs to set the following envir
 | `MONGOLAB_TYPES_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Types API MongoDB URL| 
 | `MONGOLAB_JOBS_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Event Bus MongoDB URL | 
 | `MONGOLAB_SUBSCRIPTIONS_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Subs. MongoDB URL | 
+| `REDIS_UR` | Device type sync background job Redis URL |
 | `REDIS_RATE_LIMIT_URL=redis://<user>:<pass>@<host>:<port>/` | Late Limit Redis URL |
 | `MEMCACHIER_SERVERS=<host>:<port>` | Cache server |
 | `MEMCACHIER_USERNAME=<username>` | Cache server username |
