@@ -62,7 +62,7 @@ using technologies like Docker, Mesos and Ansible would reduce the continuous de
 
 ### Documentation
 
-To let engineers, developers and makets use Lelylan is important to create high quality documentation.
+To let engineers, developers and makers use Lelylan is important to create high quality documentation.
 We started this through the dev center and the lab, but many things can be done (e.g. video, collaborations 
 with online teaching platforms).
 
