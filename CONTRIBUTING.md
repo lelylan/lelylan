@@ -1,8 +1,11 @@
 # Contributing to Lelylan
 
-This document tries to define a contributor's guide explaining how to contribute to one or more Lelylan Microservices. 
-It contains information about reporting issues as well as some tips and guidelines useful to experienced open source 
-contributors.
+This document tries to define a contributor's guide explaining how to contribute to one or more Lelylan Microservices. It contains information about reporting issues as well as some tips and guidelines useful to experienced open source contributors.
+
+“Feel free to submit a PR” are words often found in GitHub, but met with confusion and fear by many. Getting started with contributing open source is not always straightforward and can be tricky. If you are new to contribution, [watch this egghead series](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github?utm_source=drip&utm_medium=email&utm_campaign=contributing-to-open-source-on-github
+) and you’ll be equipped with the the tools, knowledge, and understanding you need to start on contributing to the world of open source projects. 
+
+Enjoy the coding and start contributing to the projects you use and love today.
 
 
 ### Topics
@@ -18,17 +21,12 @@ contributors.
 # General Issues
 
 A good way to contribute to an open source project is to send a detailed report when you encounter an issue. 
-We appreciate a well-written, thorough bug report, and will thank you for it in advance for your help
+We appreciate a well-written, thorough bug report, and will thank you for it in advance for your help.
 
-Check that [our main issue database](https://github.com/lelylan/lelylan/issues) or the issue related to a specific
-microservice doesn't already include that problem or suggestion before submitting an issue. If you find a match, 
-you can use the "subscribe" button to get notified on updates. Try to not leave random "+1" or "I have this too" 
-comments (they don't add useful information). Instead if you have ways to reproduce the issue or have additional 
-information that may help resolving the issue, please leave a comment.
+Check that [our main issue database](https://github.com/lelylan/lelylan/issues) or the issue related to a specific microservice doesn't already include that problem or suggestion before submitting an issue. If you find a match, you can use the "subscribe" button to get notified on updates. Try to not leave random "+1" or "I have this too" comments (they don't add useful information). Instead if you have ways to reproduce the issue or have additional information that may help resolving the issue, please leave a comment.
 
 Include the steps required to reproduce the problem if possible and applicable. This information will help us 
-review and fix the issue faster. When sending lengthy log-files, consider posting them as a [gist](https://gist.github.com).
-Don't forget to remove sensitive data from your logfiles before posting (you can replace those parts with "REDACTED").
+review and fix the issue faster. When sending lengthy log-files, consider posting them as a [gist](https://gist.github.com). Don't forget to remove sensitive data from your logfiles before posting (you can replace those parts with "REDACTED").
 
 When reporting issues try to include the following elements
 
@@ -43,22 +41,16 @@ When reporting issues try to include the following elements
 
 # Security issues
 
-Security is an important topic in the Internet of Things. If you discover a security issue, please bring it to 
-our attention right away. Please do not file a public issue. Instead send your report privately to 
+Security is an important topic in the Internet of Things. If you discover a security issue, please bring it to our attention right away. Please do not file a public issue. Instead send your report privately to 
 [dev@lelylan.com](mailto:dev@lelylan.com).
 
-Security reports are greatly appreciated and we will publicly thank you for it. We currently do not offer a paid 
-security bounty program, but we hope to start in the near future.
+Security reports are greatly appreciated and we will publicly thank you for it. We currently do not offer a paid security bounty program, but we hope to start in the near future.
 
 
 
 # Design proposals
 
-You can propose new designs for existing Lelylan features. You can also design entirely new features. We really 
-appreciate contributors who want to refactor or otherwise cleanup the project. We try hard to keep Lelylan lean 
-and focused. Lelylan can't do everything for everybody. This means that we might decide against incorporating a 
-new feature. However, there might be a way to implement that feature on top of Lelylan or creating an additional 
-microservice.
+You can propose new designs for existing Lelylan features. You can also design entirely new features. We really appreciate contributors who want to refactor or otherwise cleanup the project. We try hard to keep Lelylan lean and focused. Lelylan can't do everything for everybody. This means that we might decide against incorporating a new feature. However, there might be a way to implement that feature on top of Lelylan or creating an additional microservice.
 
 A refactor or cleanup proposal changes Lelylan’s internal structure without altering the external behavior. 
 To make this type of proposal:
@@ -83,12 +75,9 @@ This section gives the experienced contributor some tips and guidelines.
 
 ### Pull requests are always welcome
 
-Not sure if that typo is worth a pull request? Found a bug and know how to fix it? Please do it. We will appreciate it. 
-Any significant improvement should be documented as [a GitHub issue](https://github.com/lelylan/lelylan/issues) before
-anybody starts working on it.
+Not sure if that typo is worth a pull request? Found a bug and know how to fix it? Please do it. We will appreciate it. Any significant improvement should be documented as [a GitHub issue](https://github.com/lelylan/lelylan/issues) before anybody starts working on it.
 
-We are always thrilled to receive pull requests. We do our best to process them quickly. If your pull request is not 
-accepted on the first try, don't get discouraged and try to use the received feedback to refine your contribution.
+We are always thrilled to receive pull requests. We do our best to process them quickly. If your pull request is not accepted on the first try, don't get discouraged and try to use the received feedback to refine your contribution.
 
 ### Talking to the Lelylan community
 
@@ -103,43 +92,33 @@ Fork the repository and make changes on your fork in a feature branch.
 - If it's a feature branch, create an enhancement issue to announce your intentions, and name it XX-something 
 where XX is the number of the	issue.
 
-Submit unit tests for your changes. Ruby and Node.js have great test frameworks. Take a look at existing tests 
-for inspiration. Run the full test suite on your branch before submitting a pull request.
+Submit unit tests for your changes. Ruby and Node.js have great test frameworks. Take a look at existing tests for inspiration. Run the full test suite on your branch before submitting a pull request.
 
 Update the documentation when creating or modifying features. Test your documentation changes for clarity, 
 concision, and correctness, following the [Docker guidelines](https://docs.docker.com/opensource/doc-style/).
 Changes are made to the [dev center repo](https://github.com/lelylan/dev).
 
-Pull request descriptions should be as clear as possible and include a reference to all the issues that they address.
-Commit messages must start with a capitalized and short summary (max. 50 chars) written in the imperative, followed 
-by an optional, more detailed explanatory text which is separated from the summary by an empty line.
+Pull request descriptions should be as clear as possible and include a reference to all the issues that they address. Commit messages must start with a capitalized and short summary (max. 50 chars) written in the imperative, followed by an optional, more detailed explanatory text which is separated from the summary by an empty line.
 
-Code review comments may be added to your pull request. Discuss, then make the suggested modifications and push 
-additional commits to your feature branch. Post a comment after pushing. New commits show up in the pull request 
-automatically, but the reviewers are notified only when you comment. 
+Code review comments may be added to your pull request. Discuss, then make the suggested modifications and push additional commits to your feature branch. Post a comment after pushing. New commits show up in the pull request automatically, but the reviewers are notified only when you comment. 
 
 Before you make a pull request, squash your commits into logical units of work using `git rebase -i` and 
 `git push -f`. A logical unit of work is a consistent set of patches that should be reviewed together: 
 for example, upgrading the version of a vendored dependency and taking advantage of its now available new
 feature constitute two separate units of work. Implementing a new function and calling it in another file 
 constitute a single logical unit of work. The very high majority of submissions should have a single commit, 
-so if in doubt: squash down to one. Include an issue reference like `Closes #XX` in commits that close an issue. 
-Including references automatically closes the issue on a merge.
+so if in doubt: squash down to one. Include an issue reference like `Closes #XX` in commits that close an issue. Including references automatically closes the issue on a merge.
 
 
 ### Merge approval
 
-Lelylan maintainers use LGTM (Looks Good To Me) in comments on the code review to indicate acceptance. A change 
-requires LGTMs from an absolute majority of the maintainers of each component affected. For example, if a change 
-affects `dev/` and `devices/`, it needs an absolute majority from the maintainers of `dev/` AND, separately, an
-absolute majority of the maintainers of `devices/`.
+Lelylan maintainers use LGTM (Looks Good To Me) in comments on the code review to indicate acceptance. A change requires LGTMs from an absolute majority of the maintainers of each component affected. For example, if a change affects `dev/` and `devices/`, it needs an absolute majority from the maintainers of `dev/` AND, separately, an absolute majority of the maintainers of `devices/`.
 
 
 
 # Community guidelines
 
-We want to keep the Lelylan community active, growing and collaborative. We need your help to keep it that way. 
-To help with this we've come up with some general guidelines for the community as a whole:
+We want to keep the Lelylan community active, growing and collaborative. We need your help to keep it that way. To help with this we've come up with some general guidelines for the community as a whole:
 
 * Be nice. Be courteous, respectful and polite to fellow community members:
   no regional, racial, gender, or other abuse will be tolerated.
@@ -207,11 +186,7 @@ do need a fair way to deal with people who are making our community suck.
 
 Unless explicitly stated, we follow the coding guidelines from the Ruby and Node.js community.
 
-It is possible that the code base does not currently comply with these guidelines. We are not looking for a massive 
-PR that fixes this, since that goes against the spirit of the guidelines. All new contributions should make a
-best effort to clean up and make the code base better than they left it. Obviously, apply your best judgement. 
-Remember, the goal here is to make the code base easier for humans to navigate and understand. Always keep that 
-in mind when nudging others to comply.
+It is possible that the code base does not currently comply with these guidelines. We are not looking for a massive PR that fixes this, since that goes against the spirit of the guidelines. All new contributions should make a best effort to clean up and make the code base better than they left it. Obviously, apply your best judgement. Remember, the goal here is to make the code base easier for humans to navigate and understand. Always keep that in mind when nudging others to comply.
 
 * [Ruby coding guidelines](https://github.com/styleguide/ruby)
 * [Node.js coding guidelines](https://github.com/felixge/node-style-guide)
