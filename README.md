@@ -8,9 +8,15 @@ The Lelylan platform is both hardware-agnostic and platform-agnostic. This means
 [![Lelylan Logo](https://raw.githubusercontent.com/lelylan/lelylan/master/public/logo-lelylan.png)](http://lelylan.com)
 
 
+### Notes 
+
+This repository defines the architecture documentation. Check out the [microservices list](https://github.com/lelylan/lelylan#development) to find the real code implementation.
+
+
 ### Why Lelylan
 
 Research in the Internet of Things is global and growing fast, but lacks the standard tools. Many companies are building their own solutions. By sharing what we have learned during the years, we want to create a shared code base with a clear focus on developers. To see Lelylan in action checkout the [tuturials](http://dev.lelylan.com/#overview-tutorials) in the dev center. 
+
 
 ### Resources
 
