@@ -10,7 +10,7 @@ The Lelylan platform is both hardware-agnostic and platform-agnostic. This means
 
 ### Notes 
 
-This repository defines the architecture documentation. Check out the [microservices list](https://github.com/lelylan/lelylan#development) to find the real code implementation.
+This repository defines the architecture documentation. Check out the [microservices list](https://github.com/lelylan/lelylan#development) for the code implementation.
 
 
 ### Why Lelylan
