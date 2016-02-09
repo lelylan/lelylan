@@ -31,7 +31,7 @@ Lelylan is tested against
 * MongoDB ~2.6
 * Redis ~2.6
 
-Remember to run the `mongod` and `redis-server`.
+(remember to run the `mongod` and `redis-server`)
 
 ## Setup
 
