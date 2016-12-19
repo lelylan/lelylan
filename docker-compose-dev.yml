@@ -1,7 +1,7 @@
 version: '2'
 services:
   api-proxy:
-    image: api-proxy:latest
+    image: lelylanlab/api-proxy:latest
     restart: always
     ports:
       - "8200:8200"
@@ -39,7 +39,7 @@ services:
       - LELYLAN_PROFILES_PORT=8203
       - LELYLAN_PROXY_URL=localhost:8200
   devices:
-    image: devices:latest
+    image: lelylanlab/devices:latest
     restart: always
     ports:
       - "8201:8201"
@@ -71,7 +71,7 @@ services:
       - MEMCACHIER_USERNAME=user
       - MEMCACHIER_PASSWORD=password
   mqtt:
-    image: mqtt:latest
+    image: lelylanlab/mqtt:latest
     restart: always
     ports:
       - "1883:1883"
@@ -102,7 +102,7 @@ services:
       - MEMCACHIER_USERNAME=user
       - MEMCACHIER_PASSWORD=password
   nodes:
-    image: nodes:latest
+    image: lelylanlab/nodes:latest
     restart: always
     ports:
       - "8206:8206"
@@ -138,7 +138,7 @@ services:
       - MEMCACHIER_USERNAME=user
       - MEMCACHIER_PASSWORD=password
   people:
-    image: people:latest
+    image: lelylanlab/people:latest
     restart: always
     ports:
       - "8202:8202"
@@ -168,7 +168,7 @@ services:
       - MEMCACHIER_USERNAME=user
       - MEMCACHIER_PASSWORD=password
   physicals:
-    image: physicals:latest
+    image: lelylanlab/physicals:latest
     restart: always
     depends_on:
       - mongodb
@@ -193,7 +193,7 @@ services:
       - MEMCACHIER_USERNAME=user
       - MEMCACHIER_PASSWORD=password
   profiles:
-    image: profiles:latest
+    image: lelylanlab/profiles:latest
     restart: always
     ports:
       - "8203:8203"
@@ -222,7 +222,7 @@ services:
       - MEMCACHIER_USERNAME=user
       - MEMCACHIER_PASSWORD=password
   subscriptions:
-    image: subscriptions:latest
+    image: lelylanlab/subscriptions:latest
     restart: always
     ports:
       - "8204:8204"
@@ -250,7 +250,7 @@ services:
       - MEMCACHIER_USERNAME=user
       - MEMCACHIER_PASSWORD=password
   types:
-    image: types:latest
+    image: lelylanlab/types:latest
     restart: always
     ports:
       - "8205:8205"
@@ -276,7 +276,7 @@ services:
       - MEMCACHIER_USERNAME=user
       - MEMCACHIER_PASSWORD=password
   webhooks:
-    image: webhooks:latest
+    image: lelylanlab/webhooks:latest
     restart: always
     depends_on:
       - mongodb
@@ -301,7 +301,7 @@ services:
       - MEMCACHIER_USERNAME=user
       - MEMCACHIER_PASSWORD=password
   websockets:
-    image: websockets:latest
+    image: lelylanlab/websockets:latest
     restart: always
     depends_on:
       - mongodb
