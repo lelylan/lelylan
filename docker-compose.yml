@@ -11,6 +11,9 @@ services:
       - types
       - subscriptions
       - profiles
+      - mongodb
+      - redis
+      - memcached
     environment:
       - PORT=8200
       - RACK_ENV=development
@@ -43,6 +46,8 @@ services:
     restart: always
     depends_on:
       - mongodb
+      - redis
+      - memcached
       - people
       - types
       - subscriptions
@@ -74,6 +79,7 @@ services:
     depends_on:
       - mongodb
       - redis
+      - memcached
     environment:
       - REDIS_HOST=redis
       - DEBUG=lelylan
@@ -103,6 +109,7 @@ services:
     depends_on:
       - mongodb
       - redis
+      - memcached
       - api-proxy
       - mqtt
     environment:
@@ -138,6 +145,9 @@ services:
       - types
       - subscriptions
       - profiles
+      - mongodb
+      - redis
+      - memcached
     environment:
       - PORT=8202
       - RACK_ENV=development
@@ -164,6 +174,8 @@ services:
     restart: always
     depends_on:
       - mongodb
+      - redis
+      - memcached
     environment:
       - RACK_ENV=development
       - RAILS_ENV=development
@@ -190,6 +202,9 @@ services:
     depends_on:
       - types
       - subscriptions
+      - mongodb
+      - redis
+      - memcached
     environment:
       - PORT=8203
       - RACK_ENV=development
@@ -216,6 +231,9 @@ services:
     restart: always
     depends_on:
       - types
+      - mongodb
+      - redis
+      - memcached
     environment:
       - PORT=8204
       - RACK_ENV=development
@@ -238,8 +256,12 @@ services:
       - MEMCACHIER_USERNAME=user
       - MEMCACHIER_PASSWORD=password
   types:
-    image: lelylanlab/types:latest
+    image: test
     restart: always
+    depends_on:
+      - mongodb
+      - redis
+      - memcached
     environment:
       - PORT=8205
       - RACK_ENV=development
@@ -266,6 +288,8 @@ services:
     restart: always
     depends_on:
       - mongodb
+      - redis
+      - memcached
     environment:
       - RACK_ENV=development
       - RAILS_ENV=development
@@ -291,6 +315,8 @@ services:
     restart: always
     depends_on:
       - mongodb
+      - redis
+      - memcached
     environment:
       - RACK_ENV=development
       - RAILS_ENV=development

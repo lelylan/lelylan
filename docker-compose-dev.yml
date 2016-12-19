@@ -11,6 +11,9 @@ services:
       - types
       - subscriptions
       - profiles
+      - mongodb
+      - redis
+      - memcached
     environment:
       - PORT=8200
       - RACK_ENV=development
@@ -49,6 +52,8 @@ services:
       - types
       - subscriptions
       - profiles
+      - redis
+      - memcached
     environment:
       - PORT=8201
       - RACK_ENV=development
@@ -78,6 +83,7 @@ services:
     depends_on:
       - mongodb
       - redis
+      - memcached
     environment:
       - REDIS_HOST=redis
       - DEBUG=lelylan
@@ -111,6 +117,7 @@ services:
       - redis
       - api-proxy
       - mqtt
+      - memcached
     environment:
       - PORT=8006
       - MOSCA_HOST=mqtt
@@ -146,6 +153,9 @@ services:
       - types
       - subscriptions
       - profiles
+      - mongodb
+      - redis
+      - memcached
     environment:
       - PORT=8202
       - RACK_ENV=development
@@ -172,6 +182,8 @@ services:
     restart: always
     depends_on:
       - mongodb
+      - redis
+      - memcached
     environment:
       - RACK_ENV=development
       - RAILS_ENV=development
@@ -200,6 +212,9 @@ services:
     depends_on:
       - types
       - subscriptions
+      - mongodb
+      - redis
+      - memcached
     environment:
       - PORT=8203
       - RACK_ENV=development
@@ -228,6 +243,9 @@ services:
       - "8204:8204"
     depends_on:
       - types
+      - mongodb
+      - redis
+      - memcached
     environment:
       - PORT=8204
       - RACK_ENV=development
@@ -254,6 +272,10 @@ services:
     restart: always
     ports:
       - "8205:8205"
+    depends_on:
+      - mongodb
+      - redis
+      - memcached
     environment:
       - PORT=8205
       - RACK_ENV=development
@@ -280,6 +302,8 @@ services:
     restart: always
     depends_on:
       - mongodb
+      - redis
+      - memcached
     environment:
       - RACK_ENV=development
       - RAILS_ENV=development
@@ -305,6 +329,8 @@ services:
     restart: always
     depends_on:
       - mongodb
+      - redis
+      - memcached
     environment:
       - RACK_ENV=development
       - RAILS_ENV=development
