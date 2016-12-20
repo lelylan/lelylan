@@ -1,0 +1,388 @@
+version: '2'
+services:
+  api-proxy:
+    image: lelylanlab/api-proxy:latest
+    restart: always
+    ports:
+      - "8200:8200"
+    depends_on:
+      - people
+      - devices
+      - types
+      - subscriptions
+      - profiles
+      - mongodb
+      - redis
+      - memcached
+    environment:
+      - PORT=8200
+      - RACK_ENV=development
+      - RAILS_ENV=development
+      - NODE_ENV=development
+      - LELYLAN_PEOPLE_URL=people
+      - LELYLAN_DEVICES_URL=devices
+      - LELYLAN_TYPES_URL=types
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions
+      - LELYLAN_PROFILES_URL=profiles
+      - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
+      - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
+      - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
+      - MONGOLAB_JOBS_URL=mongodb://mongodb:27017/jobs
+      - MONGOLAB_SUBSCRIPTIONS_URL=mongodb://mongodb:27017/subscriptions
+      - MONGOLAB_LOCATIONS_URL=mongodb://mongodb:27017/
+      - REDIS_URL=redis://redis:6379/
+      - REDIS_RATE_LIMIT_URL=redis://redis:6379/
+      - MEMCACHIER_SERVERS=memcached:11211
+      - MEMCACHIER_USERNAME=user
+      - MEMCACHIER_PASSWORD=password
+      - LELYLAN_PEOPLE_PORT=8202
+      - LELYLAN_DEVICES_PORT=8201
+      - LELYLAN_TYPES_PORT=8205
+      - LELYLAN_SUBSCRIPTIONS_PORT=8204
+      - LELYLAN_PROFILES_PORT=8203
+      - LELYLAN_PROXY_URL=localhost:8200
+  devices:
+    image: lelylanlab/devices:latest
+    restart: always
+    ports:
+      - "8201:8201"
+    depends_on:
+      - mongodb
+      - people
+      - types
+      - subscriptions
+      - profiles
+      - redis
+      - memcached
+    environment:
+      - PORT=8201
+      - RACK_ENV=development
+      - RAILS_ENV=development
+      - NODE_ENV=development
+      - LELYLAN_PEOPLE_URL=people:8202
+      - LELYLAN_DEVICES_URL=devices:8201
+      - LELYLAN_TYPES_URL=types:8205
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
+      - LELYLAN_PROFILES_URL=profiles:8203
+      - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
+      - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
+      - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
+      - MONGOLAB_JOBS_URL=mongodb://mongodb:27017/jobs
+      - MONGOLAB_SUBSCRIPTIONS_URL=mongodb://mongodb:27017/subscriptions
+      - MONGOLAB_LOCATIONS_URL=mongodb://mongodb:27017/
+      - REDIS_URL=redis://redis:6379/
+      - REDIS_RATE_LIMIT_URL=redis://redis:6379/
+      - MEMCACHIER_SERVERS=memcached:11211
+      - MEMCACHIER_USERNAME=user
+      - MEMCACHIER_PASSWORD=password
+  mqtt:
+    image: lelylanlab/mqtt:latest
+    restart: always
+    ports:
+      - "1883:1883"
+    depends_on:
+      - mongodb
+      - redis
+      - memcached
+    environment:
+      - REDIS_HOST=redis
+      - DEBUG=lelylan
+      - NODE_PORT=1883
+      - RACK_ENV=development
+      - RAILS_ENV=development
+      - NODE_ENV=development
+      - LELYLAN_PEOPLE_URL=people:8202
+      - LELYLAN_DEVICES_URL=devices:8201
+      - LELYLAN_TYPES_URL=types:8205
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
+      - LELYLAN_PROFILES_URL=profiles:8203
+      - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
+      - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
+      - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
+      - MONGOLAB_JOBS_URL=mongodb://mongodb:27017/jobs
+      - MONGOLAB_SUBSCRIPTIONS_URL=mongodb://mongodb:27017/subscriptions
+      - MONGOLAB_LOCATIONS_URL=mongodb://mongodb:27017/
+      - REDIS_URL=redis://redis:6379/
+      - REDIS_RATE_LIMIT_URL=redis://redis:6379/
+      - MEMCACHIER_SERVERS=memcached:11211
+      - MEMCACHIER_USERNAME=user
+      - MEMCACHIER_PASSWORD=password
+  nodes:
+    image: lelylanlab/nodes:latest
+    restart: always
+    ports:
+      - "8206:8206"
+    depends_on:
+      - mongodb
+      - redis
+      - api-proxy
+      - mqtt
+      - memcached
+    environment:
+      - PORT=8006
+      - MOSCA_HOST=mqtt
+      - REDIS_HOST=redis
+      - LELYLAN_API_URL=http://api-proxy:8200
+      - LELYLAN_API_HOST=api-proxy
+      - DEBUG=lelylan
+      - RACK_ENV=development
+      - RAILS_ENV=development
+      - NODE_ENV=development
+      - LELYLAN_PEOPLE_URL=people:8202
+      - LELYLAN_DEVICES_URL=devices:8201
+      - LELYLAN_TYPES_URL=types:8205
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
+      - LELYLAN_PROFILES_URL=profiles:8203
+      - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
+      - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
+      - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
+      - MONGOLAB_JOBS_URL=mongodb://mongodb:27017/jobs
+      - MONGOLAB_SUBSCRIPTIONS_URL=mongodb://mongodb:27017/subscriptions
+      - MONGOLAB_LOCATIONS_URL=mongodb://mongodb:27017/
+      - REDIS_URL=redis://redis:6379/
+      - REDIS_RATE_LIMIT_URL=redis://redis:6379/
+      - MEMCACHIER_SERVERS=memcached:11211
+      - MEMCACHIER_USERNAME=user
+      - MEMCACHIER_PASSWORD=password
+  people:
+    image: lelylanlab/people:latest
+    restart: always
+    ports:
+      - "8202:8202"
+    depends_on:
+      - types
+      - subscriptions
+      - profiles
+      - mongodb
+      - redis
+      - memcached
+    environment:
+      - PORT=8202
+      - RACK_ENV=development
+      - RAILS_ENV=development
+      - NODE_ENV=development
+      - LELYLAN_PEOPLE_URL=people:8202
+      - LELYLAN_DEVICES_URL=devices:8201
+      - LELYLAN_TYPES_URL=types:8205
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
+      - LELYLAN_PROFILES_URL=profiles:8203
+      - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
+      - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
+      - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
+      - MONGOLAB_JOBS_URL=mongodb://mongodb:27017/jobs
+      - MONGOLAB_SUBSCRIPTIONS_URL=mongodb://mongodb:27017/subscriptions
+      - MONGOLAB_LOCATIONS_URL=mongodb://mongodb:27017/
+      - REDIS_URL=redis://redis:6379/
+      - REDIS_RATE_LIMIT_URL=redis://redis:6379/
+      - MEMCACHIER_SERVERS=memcached:11211
+      - MEMCACHIER_USERNAME=user
+      - MEMCACHIER_PASSWORD=password
+  physicals:
+    image: lelylanlab/physicals:latest
+    restart: always
+    depends_on:
+      - mongodb
+      - redis
+      - memcached
+    environment:
+      - RACK_ENV=development
+      - RAILS_ENV=development
+      - NODE_ENV=development
+      - LELYLAN_PEOPLE_URL=people:8202
+      - LELYLAN_DEVICES_URL=devices:8201
+      - LELYLAN_TYPES_URL=types:8205
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
+      - LELYLAN_PROFILES_URL=profiles:8203
+      - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
+      - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
+      - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
+      - MONGOLAB_JOBS_URL=mongodb://mongodb:27017/jobs
+      - MONGOLAB_SUBSCRIPTIONS_URL=mongodb://mongodb:27017/subscriptions
+      - MONGOLAB_LOCATIONS_URL=mongodb://mongodb:27017/
+      - REDIS_URL=redis://redis:6379/
+      - REDIS_RATE_LIMIT_URL=redis://redis:6379/
+      - MEMCACHIER_SERVERS=memcached:11211
+      - MEMCACHIER_USERNAME=user
+      - MEMCACHIER_PASSWORD=password
+  profiles:
+    image: lelylanlab/profiles:latest
+    restart: always
+    ports:
+      - "8203:8203"
+    depends_on:
+      - types
+      - subscriptions
+      - mongodb
+      - redis
+      - memcached
+    environment:
+      - PORT=8203
+      - RACK_ENV=development
+      - RAILS_ENV=development
+      - NODE_ENV=development
+      - LELYLAN_PEOPLE_URL=people:8202
+      - LELYLAN_DEVICES_URL=devices:8201
+      - LELYLAN_TYPES_URL=types:8205
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
+      - LELYLAN_PROFILES_URL=profiles:8203
+      - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
+      - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
+      - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
+      - MONGOLAB_JOBS_URL=mongodb://mongodb:27017/jobs
+      - MONGOLAB_SUBSCRIPTIONS_URL=mongodb://mongodb:27017/subscriptions
+      - MONGOLAB_LOCATIONS_URL=mongodb://mongodb:27017/
+      - REDIS_URL=redis://redis:6379/
+      - REDIS_RATE_LIMIT_URL=redis://redis:6379/
+      - MEMCACHIER_SERVERS=memcached:11211
+      - MEMCACHIER_USERNAME=user
+      - MEMCACHIER_PASSWORD=password
+  subscriptions:
+    image: lelylanlab/subscriptions:latest
+    restart: always
+    ports:
+      - "8204:8204"
+    depends_on:
+      - types
+      - mongodb
+      - redis
+      - memcached
+    environment:
+      - PORT=8204
+      - RACK_ENV=development
+      - RAILS_ENV=development
+      - NODE_ENV=development
+      - LELYLAN_PEOPLE_URL=people:8202
+      - LELYLAN_DEVICES_URL=devices:8201
+      - LELYLAN_TYPES_URL=types:8205
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
+      - LELYLAN_PROFILES_URL=profiles:8203
+      - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
+      - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
+      - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
+      - MONGOLAB_JOBS_URL=mongodb://mongodb:27017/jobs
+      - MONGOLAB_SUBSCRIPTIONS_URL=mongodb://mongodb:27017/subscriptions
+      - MONGOLAB_LOCATIONS_URL=mongodb://mongodb:27017/
+      - REDIS_URL=redis://redis:6379/
+      - REDIS_RATE_LIMIT_URL=redis://redis:6379/
+      - MEMCACHIER_SERVERS=memcached:11211
+      - MEMCACHIER_USERNAME=user
+      - MEMCACHIER_PASSWORD=password
+  types:
+    image: lelylanlab/types:latest
+    restart: always
+    ports:
+      - "8205:8205"
+    depends_on:
+      - mongodb
+      - redis
+      - memcached
+    environment:
+      - PORT=8205
+      - RACK_ENV=development
+      - RAILS_ENV=development
+      - NODE_ENV=development
+      - LELYLAN_PEOPLE_URL=people:8202
+      - LELYLAN_DEVICES_URL=devices:8201
+      - LELYLAN_TYPES_URL=types:8205
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
+      - LELYLAN_PROFILES_URL=profiles:8203
+      - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
+      - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
+      - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
+      - MONGOLAB_JOBS_URL=mongodb://mongodb:27017/jobs
+      - MONGOLAB_SUBSCRIPTIONS_URL=mongodb://mongodb:27017/subscriptions
+      - MONGOLAB_LOCATIONS_URL=mongodb://mongodb:27017/
+      - REDIS_URL=redis://redis:6379/
+      - REDIS_RATE_LIMIT_URL=redis://redis:6379/
+      - MEMCACHIER_SERVERS=memcached:11211
+      - MEMCACHIER_USERNAME=user
+      - MEMCACHIER_PASSWORD=password
+  webhooks:
+    image: lelylanlab/webhooks:latest
+    restart: always
+    depends_on:
+      - mongodb
+      - redis
+      - memcached
+    environment:
+      - RACK_ENV=development
+      - RAILS_ENV=development
+      - NODE_ENV=development
+      - LELYLAN_PEOPLE_URL=people:8202
+      - LELYLAN_DEVICES_URL=devices:8201
+      - LELYLAN_TYPES_URL=types:8205
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
+      - LELYLAN_PROFILES_URL=profiles:8203
+      - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
+      - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
+      - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
+      - MONGOLAB_JOBS_URL=mongodb://mongodb:27017/jobs
+      - MONGOLAB_SUBSCRIPTIONS_URL=mongodb://mongodb:27017/subscriptions
+      - MONGOLAB_LOCATIONS_URL=mongodb://mongodb:27017/
+      - REDIS_URL=redis://redis:6379/
+      - REDIS_RATE_LIMIT_URL=redis://redis:6379/
+      - MEMCACHIER_SERVERS=memcached:11211
+      - MEMCACHIER_USERNAME=user
+      - MEMCACHIER_PASSWORD=password
+  websockets:
+    image: lelylanlab/websockets:latest
+    restart: always
+    depends_on:
+      - mongodb
+      - redis
+      - memcached
+    environment:
+      - RACK_ENV=development
+      - RAILS_ENV=development
+      - NODE_ENV=development
+      - LELYLAN_PEOPLE_URL=people:8202
+      - LELYLAN_DEVICES_URL=devices:8201
+      - LELYLAN_TYPES_URL=types:8205
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
+      - LELYLAN_PROFILES_URL=profiles:8203
+      - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
+      - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
+      - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
+      - MONGOLAB_JOBS_URL=mongodb://mongodb:27017/jobs
+      - MONGOLAB_SUBSCRIPTIONS_URL=mongodb://mongodb:27017/subscriptions
+      - MONGOLAB_LOCATIONS_URL=mongodb://mongodb:27017/
+      - REDIS_URL=redis://redis:6379/
+      - REDIS_RATE_LIMIT_URL=redis://redis:6379/
+      - MEMCACHIER_SERVERS=memcached:11211
+      - MEMCACHIER_USERNAME=user
+      - MEMCACHIER_PASSWORD=password
+
+  mongodb:
+    image: mongo:2.6
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes_from:
+      - mongodb-data
+  mongodb-data:
+    image: mongo:2.6
+    volumes:
+      - /data/db
+      - /var/lib/mongodb
+      - /var/log/mongodb
+    entrypoint: /bin/true
+  redis:
+    image: redis:2.6
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes_from:
+      - redis-data
+  redis-data:
+    image: redis:2.6
+    volumes:
+      - /data
+    entrypoint: /bin/true
+  memcached:
+    image: bitnami/memcached:latest
+    restart: always
+    ports:
+      - "11211:11211"
+    environment:
+      - MEMCACHED_USERNAME=user
+      - MEMCACHED_PASSWORD=password

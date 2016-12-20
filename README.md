@@ -8,14 +8,14 @@ The Lelylan platform is both hardware-agnostic and platform-agnostic. This means
 [![Lelylan Logo](https://raw.githubusercontent.com/lelylan/lelylan/master/public/logo-lelylan.png)](http://lelylan.com)
 
 
-### Notes 
+### Notes
 
 This repository defines the architecture documentation. Check out the [microservices list](https://github.com/lelylan/lelylan#development) for the code implementation.
 
 
 ### Why Lelylan
 
-Research in the Internet of Things is global and growing fast, but lacks the standard tools. Many companies are building their own solutions. By sharing what we have learned during the years, we want to create a shared code base with a clear focus on developers. To see Lelylan in action checkout the [tutorials](http://dev.lelylan.com/#overview-tutorials) in the dev center. 
+Research in the Internet of Things is global and growing fast, but lacks the standard tools. Many companies are building their own solutions. By sharing what we have learned during the years, we want to create a shared code base with a clear focus on developers. To see Lelylan in action checkout the [tutorials](http://dev.lelylan.com/#overview-tutorials) in the dev center.
 
 
 ### Resources
@@ -68,6 +68,12 @@ Follow the installation guidelines for each of them.
 
 You can now access the [APIs]((http://dev.lelylan.com/api)) from `http://0.0.0.0:8200` (API proxy URL).
 
+#### Docker Development Installation
+- Configure environment variables in docker-compose-dev.yml
+- Run docker compose
+```bash
+docker-compose -f docker-compose-dev.yml up -d
+```
 
 ### Production
 
@@ -79,15 +85,15 @@ During deployment, every microservice needs to be set to the following environme
 | `RAILS_ENV=production` | Production rails environment |
 | `NODE_ENV=production` | Production node environment |
 | `LELYLAN_PEOPLE_URL=people.lelylan.com` | OAuth 2.0 microservice URL |
-| `LELYLAN_DEVICES_URL=devices.lelylan.com` | Devices API microservice URL | 
-| `LELYLAN_TYPES_URL=types.lelylan.com` | Types API microservice URL | 
-| `LELYLAN_SUBSCRIPTIONS_URL=subscriptions.lelylan.com` | Subs. API microservice URL| 
-| `LELYLAN_PROFILES_URL=profiles.lelylan.com` | Profiles API microservice URL | 
-| `MONGOLAB_PEOPLE_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | OAuth 2.0 MongoDB URL| 
-| `MONGOLAB_DEVICES_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Devices API MongoDB URL| 
-| `MONGOLAB_TYPES_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Types API MongoDB URL| 
-| `MONGOLAB_JOBS_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Event Bus MongoDB URL | 
-| `MONGOLAB_SUBSCRIPTIONS_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Subs. MongoDB URL | 
+| `LELYLAN_DEVICES_URL=devices.lelylan.com` | Devices API microservice URL |
+| `LELYLAN_TYPES_URL=types.lelylan.com` | Types API microservice URL |
+| `LELYLAN_SUBSCRIPTIONS_URL=subscriptions.lelylan.com` | Subs. API microservice URL|
+| `LELYLAN_PROFILES_URL=profiles.lelylan.com` | Profiles API microservice URL |
+| `MONGOLAB_PEOPLE_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | OAuth 2.0 MongoDB URL|
+| `MONGOLAB_DEVICES_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Devices API MongoDB URL|
+| `MONGOLAB_TYPES_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Types API MongoDB URL|
+| `MONGOLAB_JOBS_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Event Bus MongoDB URL |
+| `MONGOLAB_SUBSCRIPTIONS_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Subs. MongoDB URL |
 | `MEMCACHIER_SERVERS=<host>:<port>` | Cache server |
 | `MEMCACHIER_USERNAME=<username>` | Cache server username |
 | `MEMCACHIER_PASSWORD=<password>` | Cache server password|
@@ -96,6 +102,12 @@ During deployment, every microservice needs to be set to the following environme
 
 We are studying solutions such as Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [lelylan team](http://dev.lelylan.com/api).
 
+#### Docker Production Installation
+- Configure environment variables in docker-compose.yml
+- Run docker compose
+```bash
+docker-compose up -d
+```
 
 ## Roadmap
 
@@ -104,8 +116,8 @@ serve as a reference point for Lelylan contributors to understand where the proj
 helps to determine whether a contribution could be conflicting considering the future goals.
 
 The fact that a feature isn't listed here doesn't mean that a patch for it will automatically be
-refused (we also miss important things). We are always happy to receive patches for new cool features that we haven't 
-thought about, or didn't consider as a priority. Nevertheless understand that such patches might take longer for us 
+refused (we also miss important things). We are always happy to receive patches for new cool features that we haven't
+thought about, or didn't consider as a priority. Nevertheless understand that such patches might take longer for us
 to review.
 
 Checkout the [roadmap](/ROADMAP.md) to see our near future goals.
@@ -126,5 +138,3 @@ Use the available [communication channels](http://dev.lelylan.com/support) to co
 ## License
 
 Lelylan is licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
-
-
