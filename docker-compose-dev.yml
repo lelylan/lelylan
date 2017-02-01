@@ -380,6 +380,23 @@ services:
       - MEMCACHIER_USERNAME=user
       - MEMCACHIER_PASSWORD=password
 
+  #: Development tools
+  dev-center:
+    image: lelylanlab/dev:latest
+    restart: always
+    expose:
+      - 80
+    depends_on:
+      - people
+    environment:
+      - VIRTUAL_HOST=dev-center
+      - PORT=80
+      - RACK_ENV=development
+      - RAILS_ENV=development
+      - NODE_ENV=development
+      - LELYLAN_PEOPLE_URL=people
+      - LELYLAN_PEOPLE_PORT=80
+
   mongodb:
     image: mongo:2.6
     restart: always
