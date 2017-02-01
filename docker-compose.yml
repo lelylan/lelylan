@@ -12,8 +12,8 @@ services:
   api-proxy:
     image: lelylanlab/api-proxy:latest
     restart: always
-    ports:
-      - "8200:8200"
+    expose:
+      - 8000
     depends_on:
       - people
       - devices
@@ -24,9 +24,9 @@ services:
       - redis
       - memcached
     environment:
-      - PORT=8200
       - VIRTUAL_HOST=api-proxy
       - VIRTUAL_PORT=8000
+      - PORT=8000
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
@@ -46,15 +46,17 @@ services:
       - MEMCACHIER_SERVERS=memcached:11211
       - MEMCACHIER_USERNAME=user
       - MEMCACHIER_PASSWORD=password
-      - LELYLAN_PEOPLE_PORT=8202
-      - LELYLAN_DEVICES_PORT=8201
-      - LELYLAN_TYPES_PORT=8205
-      - LELYLAN_SUBSCRIPTIONS_PORT=8204
-      - LELYLAN_PROFILES_PORT=8203
-      - LELYLAN_PROXY_URL=localhost:8200
+      - LELYLAN_PEOPLE_PORT=80
+      - LELYLAN_DEVICES_PORT=80
+      - LELYLAN_TYPES_PORT=80
+      - LELYLAN_SUBSCRIPTIONS_PORT=80
+      - LELYLAN_PROFILES_PORT=80
+      - LELYLAN_PROXY_URL=api-proxy
   devices:
     image: lelylanlab/devices:latest
     restart: always
+    expose:
+      - 80
     depends_on:
       - mongodb
       - redis
@@ -64,16 +66,16 @@ services:
       - subscriptions
       - profiles
     environment:
-      - PORT=8201
       - VIRTUAL_HOST=devices
+      - PORT=80
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
-      - LELYLAN_PEOPLE_URL=people:8202
-      - LELYLAN_DEVICES_URL=devices:8201
-      - LELYLAN_TYPES_URL=types:8205
-      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
-      - LELYLAN_PROFILES_URL=profiles:8203
+      - LELYLAN_PEOPLE_URL=people
+      - LELYLAN_DEVICES_URL=devices
+      - LELYLAN_TYPES_URL=types
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions
+      - LELYLAN_PROFILES_URL=profiles
       - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
       - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
       - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
@@ -88,6 +90,8 @@ services:
   mqtt:
     image: lelylanlab/mqtt:latest
     restart: always
+    expose:
+      - 80
     depends_on:
       - mongodb
       - redis
@@ -100,11 +104,11 @@ services:
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
-      - LELYLAN_PEOPLE_URL=people:8202
-      - LELYLAN_DEVICES_URL=devices:8201
-      - LELYLAN_TYPES_URL=types:8205
-      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
-      - LELYLAN_PROFILES_URL=profiles:8203
+      - LELYLAN_PEOPLE_URL=people
+      - LELYLAN_DEVICES_URL=devices
+      - LELYLAN_TYPES_URL=types
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions
+      - LELYLAN_PROFILES_URL=profiles
       - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
       - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
       - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
@@ -119,6 +123,8 @@ services:
   nodes:
     image: lelylanlab/nodes:latest
     restart: always
+    expose:
+      - 8000
     depends_on:
       - mongodb
       - redis
@@ -126,22 +132,22 @@ services:
       - api-proxy
       - mqtt
     environment:
-      - PORT=8006
       - VIRTUAL_HOST=nodes
       - VIRTUAL_PORT=8000
+      - PORT=8000
       - MOSCA_HOST=mqtt
       - REDIS_HOST=redis
-      - LELYLAN_API_URL=http://api-proxy:8200
+      - LELYLAN_API_URL=api-proxy
       - LELYLAN_API_HOST=api-proxy
       - DEBUG=lelylan
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
-      - LELYLAN_PEOPLE_URL=people:8202
-      - LELYLAN_DEVICES_URL=devices:8201
-      - LELYLAN_TYPES_URL=types:8205
-      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
-      - LELYLAN_PROFILES_URL=profiles:8203
+      - LELYLAN_PEOPLE_URL=people
+      - LELYLAN_DEVICES_URL=devices
+      - LELYLAN_TYPES_URL=types
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions
+      - LELYLAN_PROFILES_URL=profiles
       - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
       - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
       - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
@@ -156,6 +162,8 @@ services:
   people:
     image: lelylanlab/people:latest
     restart: always
+    expose:
+      - 80
     depends_on:
       - types
       - subscriptions
@@ -164,16 +172,16 @@ services:
       - redis
       - memcached
     environment:
-      - PORT=8202
       - VIRTUAL_HOST=people
+      - PORT=80
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
-      - LELYLAN_PEOPLE_URL=people:8202
-      - LELYLAN_DEVICES_URL=devices:8201
-      - LELYLAN_TYPES_URL=types:8205
-      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
-      - LELYLAN_PROFILES_URL=profiles:8203
+      - LELYLAN_PEOPLE_URL=people
+      - LELYLAN_DEVICES_URL=devices
+      - LELYLAN_TYPES_URL=types
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions
+      - LELYLAN_PROFILES_URL=profiles
       - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
       - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
       - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
@@ -188,6 +196,8 @@ services:
   physicals:
     image: lelylanlab/physicals:latest
     restart: always
+    expose:
+      - 80
     depends_on:
       - mongodb
       - redis
@@ -197,11 +207,11 @@ services:
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
-      - LELYLAN_PEOPLE_URL=people:8202
-      - LELYLAN_DEVICES_URL=devices:8201
-      - LELYLAN_TYPES_URL=types:8205
-      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
-      - LELYLAN_PROFILES_URL=profiles:8203
+      - LELYLAN_PEOPLE_URL=people
+      - LELYLAN_DEVICES_URL=devices
+      - LELYLAN_TYPES_URL=types
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions
+      - LELYLAN_PROFILES_URL=profiles
       - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
       - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
       - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
@@ -216,6 +226,8 @@ services:
   profiles:
     image: lelylanlab/profiles:latest
     restart: always
+    expose:
+      - 80
     depends_on:
       - types
       - subscriptions
@@ -223,16 +235,16 @@ services:
       - redis
       - memcached
     environment:
-      - PORT=8203
       - VIRTUAL_HOST=profiles
+      - PORT=80
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
-      - LELYLAN_PEOPLE_URL=people:8202
-      - LELYLAN_DEVICES_URL=devices:8201
-      - LELYLAN_TYPES_URL=types:8205
-      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
-      - LELYLAN_PROFILES_URL=profiles:8203
+      - LELYLAN_PEOPLE_URL=people
+      - LELYLAN_DEVICES_URL=devices
+      - LELYLAN_TYPES_URL=types
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions
+      - LELYLAN_PROFILES_URL=profiles
       - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
       - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
       - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
@@ -247,22 +259,24 @@ services:
   subscriptions:
     image: lelylanlab/subscriptions:latest
     restart: always
+    expose:
+      - 80
     depends_on:
       - types
       - mongodb
       - redis
       - memcached
     environment:
-      - PORT=8204
       - VIRTUAL_HOST=subscriptions
+      - PORT=80
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
-      - LELYLAN_PEOPLE_URL=people:8202
-      - LELYLAN_DEVICES_URL=devices:8201
-      - LELYLAN_TYPES_URL=types:8205
-      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
-      - LELYLAN_PROFILES_URL=profiles:8203
+      - LELYLAN_PEOPLE_URL=people
+      - LELYLAN_DEVICES_URL=devices
+      - LELYLAN_TYPES_URL=types
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions
+      - LELYLAN_PROFILES_URL=profiles
       - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
       - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
       - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
@@ -277,21 +291,23 @@ services:
   types:
     image: test
     restart: always
+    expose:
+      - 80
     depends_on:
       - mongodb
       - redis
       - memcached
     environment:
-      - PORT=8205
       - VIRTUAL_HOST=types
+      - PORT=80
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
-      - LELYLAN_PEOPLE_URL=people:8202
-      - LELYLAN_DEVICES_URL=devices:8201
-      - LELYLAN_TYPES_URL=types:8205
-      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
-      - LELYLAN_PROFILES_URL=profiles:8203
+      - LELYLAN_PEOPLE_URL=people
+      - LELYLAN_DEVICES_URL=devices
+      - LELYLAN_TYPES_URL=types
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions
+      - LELYLAN_PROFILES_URL=profiles
       - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
       - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
       - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
@@ -306,6 +322,8 @@ services:
   webhooks:
     image: lelylanlab/webhooks:latest
     restart: always
+    expose:
+      - 80
     depends_on:
       - mongodb
       - redis
@@ -315,11 +333,11 @@ services:
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
-      - LELYLAN_PEOPLE_URL=people:8202
-      - LELYLAN_DEVICES_URL=devices:8201
-      - LELYLAN_TYPES_URL=types:8205
-      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
-      - LELYLAN_PROFILES_URL=profiles:8203
+      - LELYLAN_PEOPLE_URL=people
+      - LELYLAN_DEVICES_URL=devices
+      - LELYLAN_TYPES_URL=types
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions
+      - LELYLAN_PROFILES_URL=profiles
       - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
       - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
       - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
@@ -334,6 +352,8 @@ services:
   websockets:
     image: lelylanlab/websockets:latest
     restart: always
+    expose:
+      - 80
     depends_on:
       - mongodb
       - redis
@@ -343,11 +363,11 @@ services:
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
-      - LELYLAN_PEOPLE_URL=people:8202
-      - LELYLAN_DEVICES_URL=devices:8201
-      - LELYLAN_TYPES_URL=types:8205
-      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions:8204
-      - LELYLAN_PROFILES_URL=profiles:8203
+      - LELYLAN_PEOPLE_URL=people
+      - LELYLAN_DEVICES_URL=devices
+      - LELYLAN_TYPES_URL=types
+      - LELYLAN_SUBSCRIPTIONS_URL=subscriptions
+      - LELYLAN_PROFILES_URL=profiles
       - MONGOLAB_PEOPLE_URL=mongodb://mongodb:27017/people
       - MONGOLAB_DEVICES_URL=mongodb://mongodb:27017/devices
       - MONGOLAB_TYPES_URL=mongodb://mongodb:27017/types
