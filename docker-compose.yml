@@ -1,5 +1,14 @@
 version: '2'
 services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    environment:
+      - DEFAULT_HOST=api-proxy
+      - VIRTUAL_HOST=nginx
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
   api-proxy:
     image: lelylanlab/api-proxy:latest
     restart: always
