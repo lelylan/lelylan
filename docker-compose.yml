@@ -25,6 +25,8 @@ services:
       - memcached
     environment:
       - PORT=8200
+      - VIRTUAL_HOST=api-proxy
+      - VIRTUAL_PORT=8000
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
@@ -63,6 +65,7 @@ services:
       - profiles
     environment:
       - PORT=8201
+      - VIRTUAL_HOST=devices
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
@@ -90,6 +93,7 @@ services:
       - redis
       - memcached
     environment:
+      - VIRTUAL_HOST=mqtt
       - REDIS_HOST=redis
       - DEBUG=lelylan
       - NODE_PORT=1883
@@ -123,6 +127,8 @@ services:
       - mqtt
     environment:
       - PORT=8006
+      - VIRTUAL_HOST=nodes
+      - VIRTUAL_PORT=8000
       - MOSCA_HOST=mqtt
       - REDIS_HOST=redis
       - LELYLAN_API_URL=http://api-proxy:8200
@@ -159,6 +165,7 @@ services:
       - memcached
     environment:
       - PORT=8202
+      - VIRTUAL_HOST=people
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
@@ -186,6 +193,7 @@ services:
       - redis
       - memcached
     environment:
+      - VIRTUAL_HOST=physicals
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
@@ -216,6 +224,7 @@ services:
       - memcached
     environment:
       - PORT=8203
+      - VIRTUAL_HOST=profiles
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
@@ -245,6 +254,7 @@ services:
       - memcached
     environment:
       - PORT=8204
+      - VIRTUAL_HOST=subscriptions
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
@@ -273,6 +283,7 @@ services:
       - memcached
     environment:
       - PORT=8205
+      - VIRTUAL_HOST=types
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
@@ -300,6 +311,7 @@ services:
       - redis
       - memcached
     environment:
+      - VIRTUAL_HOST=webhooks
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
@@ -327,6 +339,7 @@ services:
       - redis
       - memcached
     environment:
+      - VIRTUAL_HOST=websockets
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
