@@ -381,6 +381,26 @@ services:
       - MEMCACHIER_PASSWORD=password
 
   #: Development tools
+  devices-dashboard:
+    image: lelylanlab/devices-dashboard-ng:latest
+    restart: always
+    expose:
+      - 80
+    depends_on:
+      - api-proxy
+      - people
+      - websockets
+    environment:
+      - VIRTUAL_HOST=devices-dashboard
+      - PORT=80
+      - RACK_ENV=development
+      - RAILS_ENV=development
+      - NODE_ENV=development
+      - LELYLAN_API_PUBLIC_URL=api-proxy
+      - LELYLAN_PEOPLE_PUBLIC_URL=people
+      - LELYLAN_CLIENT_ID=""
+      - LELYLAN_DEVICES_DASHBOARD_PUBLIC_URL=devices-dashboard
+      - LELYLAN_WEBSOCKETS_PUBLIC_URL=websockets
   dev-center:
     image: lelylanlab/dev:latest
     restart: always
