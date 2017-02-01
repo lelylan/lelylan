@@ -193,6 +193,8 @@ services:
       - MEMCACHIER_SERVERS=memcached:11211
       - MEMCACHIER_USERNAME=user
       - MEMCACHIER_PASSWORD=password
+      - LELYLAN_DEV_URL=dev-center
+      - LELYLAN_DEV_PORT=80
   physicals:
     image: lelylanlab/physicals:latest
     restart: always
