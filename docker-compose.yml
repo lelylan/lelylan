@@ -385,6 +385,8 @@ services:
     restart: always
     volumes_from:
       - mongodb-data
+    expose:
+      - 27017
   mongodb-data:
     image: mongo:2.6
     volumes:
@@ -397,6 +399,8 @@ services:
     restart: always
     volumes_from:
       - redis-data
+    expose:
+      - 6379
   redis-data:
     image: redis:2.6
     volumes:
@@ -405,6 +409,8 @@ services:
   memcached:
     image: bitnami/memcached:latest
     restart: always
+    expose:
+      - 11211
     environment:
       - MEMCACHED_USERNAME=user
       - MEMCACHED_PASSWORD=password
