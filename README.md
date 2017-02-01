@@ -65,25 +65,22 @@ Follow the installation guidelines for each of them.
 | [MQTT Server](https://github.com/lelylan/mqtt) | MQTT server/broker |
 | [Webhooks](https://github.com/lelylan/webhooks) | Realtime HTTP notification |
 | [Websockets](https://github.com/lelylan/websockets) | Full-duplex communication over TCP |
+| [Dev Center](https://github.com/lelylan/dev) | Lelylan Dev Center |
+| [Devices Dashboard](https://github.com/lelylan/devices-dashboard-ng) | Lelylan Devices Dashboard |
+| [Types Dashboard](https://github.com/lelylan/types-dashboard-ng) | Lelylan Types Dashboard |
 
 You can now access the [APIs]((http://dev.lelylan.com/api)) from `http://0.0.0.0:8200` (API proxy URL).
 
-#### Docker Development Installation
-- Configure environment variables in docker-compose-dev.yml
-- Run docker compose
-```bash
-docker-compose -f docker-compose-dev.yml up -d
-```
-
-### Production
+#### Development Environment Variable
 
 During deployment, every microservice needs to be set to the following environment variables (remember to change them with your own microservices, mongodb, redis and cache URLs).
 
 | Environment Variable | Description |
 | ------------- | ------------- |
-| `RACK_ENV=production` | Production rack environment |
-| `RAILS_ENV=production` | Production rails environment |
-| `NODE_ENV=production` | Production node environment |
+| `RACK_ENV=development` | Development rack environment |
+| `RAILS_ENV=development` | Development rails environment |
+| `NODE_ENV=development` | Development node environment |
+| `LELYLAN_DEV_URL=dev.lelylan.com` | Dev Center microservice URL |
 | `LELYLAN_PEOPLE_URL=people.lelylan.com` | OAuth 2.0 microservice URL |
 | `LELYLAN_DEVICES_URL=devices.lelylan.com` | Devices API microservice URL |
 | `LELYLAN_TYPES_URL=types.lelylan.com` | Types API microservice URL |
@@ -97,12 +94,67 @@ During deployment, every microservice needs to be set to the following environme
 | `MEMCACHIER_SERVERS=<host>:<port>` | Cache server |
 | `MEMCACHIER_USERNAME=<username>` | Cache server username |
 | `MEMCACHIER_PASSWORD=<password>` | Cache server password|
-| `REDIS_URL` | Background Job Redis URL |
+| `REDIS_URL=redis://<user>:<pass>@<host>:<port>/` | Background Job Redis URL |
 | `REDIS_RATE_LIMIT_URL=redis://<user>:<pass>@<host>:<port>/` | Late Limit Redis URL |
 
 We are studying solutions such as Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [lelylan team](http://dev.lelylan.com/api).
 
-#### Docker Production Installation
+#### Docker Development Installation
+- Configure environment variables in docker-compose-dev.yml
+- Run docker compose
+```bash
+docker-compose -f docker-compose-dev.yml up -d
+```
+
+### Development
+
+Lelylan is composed by different microservices.
+Follow the installation guidelines for each of them.
+
+| Microservice  | Description |
+| ------------- | ------------- |
+| [API Proxy](https://github.com/lelylan/api-proxy) | Proxy API |
+| [Devices API](https://github.com/lelylan/devices)  | Device monitoring and control |
+| [Types API](https://github.com/lelylan/types) | Device type structure |
+| [Subscriptions API](https://github.com/lelylan/subscriptions) | Realtime subscription |
+| [Profiles API](https://github.com/lelylan/profiles) | Profile information |
+| [OAuth 2.0](https://github.com/lelylan/people) | User authentication and authorization  |
+| [Physical Proxy](https://github.com/lelylan/physicals) | Forward requests to the physical world |
+| [MQTT Node](https://github.com/lelylan/nodes) | Forward and receive MQTT requests |
+| [MQTT Server](https://github.com/lelylan/mqtt) | MQTT server/broker |
+| [Webhooks](https://github.com/lelylan/webhooks) | Realtime HTTP notification |
+| [Websockets](https://github.com/lelylan/websockets) | Full-duplex communication over TCP |
+
+You can now access the [APIs]((http://dev.lelylan.com/api)) from `http://0.0.0.0:8200` (API proxy URL).
+
+#### Development Environment Variable
+
+During deployment, every microservice needs to be set to the following environment variables (remember to change them with your own microservices, mongodb, redis and cache URLs).
+
+| Environment Variable | Description |
+| ------------- | ------------- |
+| `RACK_ENV=development` | Development rack environment |
+| `RAILS_ENV=development` | Development rails environment |
+| `NODE_ENV=development` | Development node environment |
+| `LELYLAN_PEOPLE_URL=people.lelylan.com` | OAuth 2.0 microservice URL |
+| `LELYLAN_DEVICES_URL=devices.lelylan.com` | Devices API microservice URL |
+| `LELYLAN_TYPES_URL=types.lelylan.com` | Types API microservice URL |
+| `LELYLAN_SUBSCRIPTIONS_URL=subscriptions.lelylan.com` | Subs. API microservice URL|
+| `LELYLAN_PROFILES_URL=profiles.lelylan.com` | Profiles API microservice URL |
+| `MONGOLAB_PEOPLE_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | OAuth 2.0 MongoDB URL|
+| `MONGOLAB_DEVICES_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Devices API MongoDB URL|
+| `MONGOLAB_TYPES_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Types API MongoDB URL|
+| `MONGOLAB_JOBS_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Event Bus MongoDB URL |
+| `MONGOLAB_SUBSCRIPTIONS_URL=mongodb://<user>:<pass>@<host>:<port>/<name>` | Subs. MongoDB URL |
+| `MEMCACHIER_SERVERS=<host>:<port>` | Cache server |
+| `MEMCACHIER_USERNAME=<username>` | Cache server username |
+| `MEMCACHIER_PASSWORD=<password>` | Cache server password|
+| `REDIS_URL=redis://<user>:<pass>@<host>:<port>/` | Background Job Redis URL |
+| `REDIS_RATE_LIMIT_URL=redis://<user>:<pass>@<host>:<port>/` | Late Limit Redis URL |
+
+We are studying solutions such as Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [lelylan team](http://dev.lelylan.com/api).
+
+#### Docker Development Installation
 - Configure environment variables in docker-compose.yml
 - Run docker compose
 ```bash
