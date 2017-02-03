@@ -106,7 +106,34 @@ We are studying solutions such as Docker, Mesos, and Ansible to simplify the ins
 docker-compose -f docker-compose-dev.yml up -d
 ```
 
-### Development
+##### Use subdomains for all microservices
+
+###### Sed to replace domains
+```bash
+sed -i '/VIRTUAL_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
+sed -i '/DEFAULT_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
+sed -i '/PUBLIC_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
+sed -i '/LELYLAN_DEV_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
+```
+
+| Microservice  | Default Domian | Domian after sed commands |
+| ------------- | ------------- | ------------- |
+| api-proxy | api-proxy | api-proxy.lelylan.com |
+| devices | devices | devices.lelylan.com |
+| types | types | types.lelylan.com |
+| subscriptions | subscriptions | subscriptions.lelylan.com |
+| profiles | profiles | profiles.lelylan.com |
+| people | people | people.lelylan.com |
+| physicals | physicals | physicals.lelylan.com |
+| nodes | nodes | nodes.lelylan.com |
+| mqtt | mqtt | mqtt.lelylan.com |
+| webhooks | webhooks | webhooks.lelylan.com |
+| websockets | websockets | websockets.lelylan.com |
+| dev | dev-center | dev-center.lelylan.com |
+| devices-dashboard-ng | devices-dashboard-ng | devices-dashboard-ng.lelylan.com |
+| types-dashboard-ng | types-dashboard-ng | types-dashboard-ng.lelylan.com |
+
+### Production
 
 Lelylan is composed by different microservices.
 Follow the installation guidelines for each of them.
@@ -127,15 +154,15 @@ Follow the installation guidelines for each of them.
 
 You can now access the [APIs]((http://dev.lelylan.com/api)) from `http://0.0.0.0:8200` (API proxy URL).
 
-#### Development Environment Variable
+#### Production Environment Variable
 
 During deployment, every microservice needs to be set to the following environment variables (remember to change them with your own microservices, mongodb, redis and cache URLs).
 
 | Environment Variable | Description |
 | ------------- | ------------- |
-| `RACK_ENV=development` | Development rack environment |
-| `RAILS_ENV=development` | Development rails environment |
-| `NODE_ENV=development` | Development node environment |
+| `RACK_ENV=production` | Production rack environment |
+| `RAILS_ENV=production` | Production rails environment |
+| `NODE_ENV=production` | Production node environment |
 | `LELYLAN_PEOPLE_URL=people.lelylan.com` | OAuth 2.0 microservice URL |
 | `LELYLAN_DEVICES_URL=devices.lelylan.com` | Devices API microservice URL |
 | `LELYLAN_TYPES_URL=types.lelylan.com` | Types API microservice URL |
@@ -154,12 +181,35 @@ During deployment, every microservice needs to be set to the following environme
 
 We are studying solutions such as Docker, Mesos, and Ansible to simplify the installation process. If you are experimenting in the same area get in touch with [lelylan team](http://dev.lelylan.com/api).
 
-#### Docker Development Installation
+#### Docker Production Installation
 - Configure environment variables in docker-compose.yml
 - Run docker compose
 ```bash
 docker-compose up -d
 ```
+
+##### Use subdomains for all microservices
+
+###### Sed to replace domains
+```bash
+sed -i '/VIRTUAL_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
+sed -i '/DEFAULT_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
+sed -i '/PUBLIC_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
+```
+
+| Microservice  | Default Domian | Domian after sed commands |
+| ------------- | ------------- | ------------- |
+| api-proxy | api-proxy | api-proxy.lelylan.com |
+| devices | devices | devices.lelylan.com |
+| types | types | types.lelylan.com |
+| subscriptions | subscriptions | subscriptions.lelylan.com |
+| profiles | profiles | profiles.lelylan.com |
+| people | people | people.lelylan.com |
+| physicals | physicals | physicals.lelylan.com |
+| nodes | nodes | nodes.lelylan.com |
+| mqtt | mqtt | mqtt.lelylan.com |
+| webhooks | webhooks | webhooks.lelylan.com |
+| websockets | websockets | websockets.lelylan.com |
 
 ## Roadmap
 
