@@ -355,13 +355,15 @@ services:
     image: lelylanlab/websockets:latest
     restart: always
     expose:
-      - 80
+      - 8000
     depends_on:
       - mongodb
       - redis
       - memcached
     environment:
       - VIRTUAL_HOST=websockets
+      - VIRTUAL_PORT=8000
+      - PORT=8000
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
@@ -414,6 +416,7 @@ services:
       - websockets
     environment:
       - VIRTUAL_HOST=devices-dashboard
+      - HOST=devices-dashboard
       - PORT=80
       - RACK_ENV=development
       - RAILS_ENV=development
