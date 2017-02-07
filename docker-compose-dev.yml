@@ -396,6 +396,8 @@ services:
       - websockets
     environment:
       - VIRTUAL_HOST=types-dashboard
+      - PUBLIC_HOST=types-dashboard
+      - LISTEN_HOST=0.0.0.0
       - PORT=80
       - RACK_ENV=development
       - RAILS_ENV=development
@@ -405,6 +407,8 @@ services:
       - LELYLAN_CLIENT_ID=""
       - LELYLAN_TYPES_DASHBOARD_PUBLIC_URL=types-dashboard
       - LELYLAN_WEBSOCKETS_PUBLIC_URL=websockets
+      - LELYLAN_DEV_CENTER_PUBLIC_URL=dev-center
+      - LELYLAN_NODES_PUBLIC_URL=nodes
   devices-dashboard:
     image: lelylanlab/devices-dashboard-ng:latest
     restart: always
@@ -416,7 +420,8 @@ services:
       - websockets
     environment:
       - VIRTUAL_HOST=devices-dashboard
-      - HOST=devices-dashboard
+      - PUBLIC_HOST=devices-dashboard
+      - LISTEN_HOST=0.0.0.0
       - PORT=80
       - RACK_ENV=development
       - RAILS_ENV=development
@@ -426,6 +431,8 @@ services:
       - LELYLAN_CLIENT_ID=""
       - LELYLAN_DEVICES_DASHBOARD_PUBLIC_URL=devices-dashboard
       - LELYLAN_WEBSOCKETS_PUBLIC_URL=websockets
+      - LELYLAN_DEV_CENTER_PUBLIC_URL=dev-center
+      - LELYLAN_NODES_PUBLIC_URL=nodes
   dev-center:
     image: lelylanlab/dev:latest
     restart: always
