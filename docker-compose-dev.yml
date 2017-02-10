@@ -406,6 +406,7 @@ services:
       - LELYLAN_PEOPLE_PUBLIC_URL=people
       - LELYLAN_CLIENT_ID=""
       - LELYLAN_TYPES_DASHBOARD_PUBLIC_URL=types-dashboard
+      - LELYLAN_DEVICES_DASHBOARD_PUBLIC_URL=devices-dashboard
       - LELYLAN_WEBSOCKETS_PUBLIC_URL=websockets
       - LELYLAN_DEV_CENTER_PUBLIC_URL=dev-center
       - LELYLAN_NODES_PUBLIC_URL=nodes
@@ -430,6 +431,7 @@ services:
       - LELYLAN_PEOPLE_PUBLIC_URL=people
       - LELYLAN_CLIENT_ID=""
       - LELYLAN_DEVICES_DASHBOARD_PUBLIC_URL=devices-dashboard
+      - LELYLAN_TYPES_DASHBOARD_PUBLIC_URL=types-dashboard
       - LELYLAN_WEBSOCKETS_PUBLIC_URL=websockets
       - LELYLAN_DEV_CENTER_PUBLIC_URL=dev-center
       - LELYLAN_NODES_PUBLIC_URL=nodes
