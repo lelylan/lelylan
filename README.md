@@ -115,6 +115,7 @@ sed -i '/DEFAULT_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/PUBLIC_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/LELYLAN_DEV_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/PUBLIC_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
+sed -i '/LELYLAN_PROXY_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
 ```
 
 | Microservice  | Default Domian | Domian after sed commands |
@@ -196,6 +197,7 @@ docker-compose up -d
 sed -i '/VIRTUAL_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/DEFAULT_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/PUBLIC_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
+sed -i '/LELYLAN_PROXY_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
 ```
 
 | Microservice  | Default Domian | Domian after sed commands |
