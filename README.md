@@ -80,6 +80,8 @@ During deployment, every microservice needs to be set to the following environme
 | `RACK_ENV=development` | Development rack environment |
 | `RAILS_ENV=development` | Development rails environment |
 | `NODE_ENV=development` | Development node environment |
+| `LELYLAN_API_URL` | Api Proxy microservice URL |
+| `LELYLAN_API_HOST` | Api Proxy microservice URL |
 | `LELYLAN_DEV_URL=dev.lelylan.com` | Dev Center microservice URL |
 | `LELYLAN_PEOPLE_URL=people.lelylan.com` | OAuth 2.0 microservice URL |
 | `LELYLAN_DEVICES_URL=devices.lelylan.com` | Devices API microservice URL |
@@ -116,6 +118,8 @@ sed -i '/PUBLIC_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/LELYLAN_DEV_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/PUBLIC_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/LELYLAN_PROXY_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
+sed -i '/LELYLAN_API_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
+sed -i '/LELYLAN_API_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
 ```
 
 | Microservice  | Default Domian | Domian after sed commands |
@@ -165,6 +169,8 @@ During deployment, every microservice needs to be set to the following environme
 | `RACK_ENV=production` | Production rack environment |
 | `RAILS_ENV=production` | Production rails environment |
 | `NODE_ENV=production` | Production node environment |
+| `LELYLAN_API_URL` | Api Proxy microservice URL |
+| `LELYLAN_API_HOST` | Api Proxy microservice URL |
 | `LELYLAN_PEOPLE_URL=people.lelylan.com` | OAuth 2.0 microservice URL |
 | `LELYLAN_DEVICES_URL=devices.lelylan.com` | Devices API microservice URL |
 | `LELYLAN_TYPES_URL=types.lelylan.com` | Types API microservice URL |
@@ -198,6 +204,8 @@ sed -i '/VIRTUAL_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/DEFAULT_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/PUBLIC_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/LELYLAN_PROXY_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
+sed -i '/LELYLAN_API_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
+sed -i '/LELYLAN_API_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
 ```
 
 | Microservice  | Default Domian | Domian after sed commands |
