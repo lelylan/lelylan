@@ -137,7 +137,7 @@ services:
       - PORT=8000
       - MOSCA_HOST=mqtt
       - REDIS_HOST=redis
-      - LELYLAN_API_URL=api-proxy
+      - LELYLAN_API_URL=http://api-proxy
       - LELYLAN_API_HOST=api-proxy
       - DEBUG=lelylan
       - RACK_ENV=development
