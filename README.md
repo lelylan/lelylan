@@ -118,7 +118,6 @@ sed -i '/PUBLIC_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/LELYLAN_DEV_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/PUBLIC_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/LELYLAN_PROXY_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
-sed -i '/LELYLAN_API_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/LELYLAN_API_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
 ```
 
@@ -204,7 +203,6 @@ sed -i '/VIRTUAL_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/DEFAULT_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/PUBLIC_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/LELYLAN_PROXY_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
-sed -i '/LELYLAN_API_URL/ s/$/.lelylan.com/' docker-compose-dev.yml
 sed -i '/LELYLAN_API_HOST/ s/$/.lelylan.com/' docker-compose-dev.yml
 ```
 
