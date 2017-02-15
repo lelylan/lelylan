@@ -256,7 +256,7 @@ services:
       - MEMCACHIER_USERNAME=user
       - MEMCACHIER_PASSWORD=password
   types:
-    image: test
+    image: lelylanlab/types:latest
     restart: always
     depends_on:
       - mongodb
