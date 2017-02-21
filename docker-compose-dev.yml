@@ -27,6 +27,7 @@ services:
       - VIRTUAL_HOST=api-proxy
       - VIRTUAL_PORT=8000
       - PORT=8000
+      - DEBUG=lelylan
       - RACK_ENV=development
       - RAILS_ENV=development
       - NODE_ENV=development
@@ -363,6 +364,7 @@ services:
     environment:
       - VIRTUAL_HOST=websockets
       - VIRTUAL_PORT=8000
+      - DEBUG=lelylan
       - PORT=8000
       - RACK_ENV=development
       - RAILS_ENV=development
@@ -458,6 +460,7 @@ services:
       - mongodb-data
     expose:
       - 27017
+    command: mongod --smallfiles
   mongodb-data:
     image: mongo:2.6
     volumes:
