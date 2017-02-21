@@ -352,6 +352,7 @@ services:
       - MEMCACHIER_SERVERS=memcached:11211
       - MEMCACHIER_USERNAME=user
       - MEMCACHIER_PASSWORD=password
+      - DEBUG=true
   websockets:
     image: lelylanlab/websockets:latest
     restart: always
