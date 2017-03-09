@@ -209,6 +209,7 @@ services:
       - VIRTUAL_HOST=physicals
       - RACK_ENV=development
       - RAILS_ENV=development
+      - DEBUG=lelylan
       - NODE_ENV=development
       - LELYLAN_PEOPLE_URL=people
       - LELYLAN_DEVICES_URL=devices
