@@ -3,7 +3,7 @@
 This document tries to define a contributor's guide explaining how to contribute to one or more Lelylan Microservices. It contains information about reporting issues as well as some tips and guidelines useful to experienced open source contributors.
 
 “Feel free to submit a PR” are words often found in GitHub, but met with confusion and fear by many. Getting started with contributing open source is not always straightforward and can be tricky. If you are new to contribution, [watch this egghead series](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github?utm_source=drip&utm_medium=email&utm_campaign=contributing-to-open-source-on-github
-) and you’ll be equipped with the the tools, knowledge, and understanding you need to start on contributing to the world of open source projects. 
+) and you’ll be equipped with the the tools, knowledge, and understanding you need to start on contributing to the world of open source projects. lel
 
 Enjoy the coding and start contributing to the projects you use and love today.
 
